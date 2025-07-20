@@ -1,0 +1,3641 @@
+[
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "place",
+    "expression": "grel:value",
+    "onError": "keep-original",
+    "newColumnName": "place_cleaned",
+    "columnInsertIndex": 6,
+    "description": "Create column place_cleaned at index 6 based on column place using expression grel:value"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "place_cleaned",
+          "expression": "value",
+          "columnName": "place_cleaned",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "(DELMONICO'S.NEW YORK)",
+                "l": "(DELMONICO'S.NEW YORK)"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S, [NY]",
+                "l": "DELMONICO'S, [NY]"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S, NY;",
+                "l": "DELMONICO'S, NY;"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S,( NEW YORK)",
+                "l": "DELMONICO'S,( NEW YORK)"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S,NY",
+                "l": "DELMONICO'S,NY"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S, NEW YORK, NY",
+                "l": "DELMONICO'S, NEW YORK, NY"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S, [NEW YORK, N.Y.]",
+                "l": "DELMONICO'S, [NEW YORK, N.Y.]"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S [NY]",
+                "l": "DELMONICO'S [NY]"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S, NEW YORK",
+                "l": "DELMONICO'S, NEW YORK"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICOS', NY",
+                "l": "DELMONICOS', NY"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S, N.Y.",
+                "l": "DELMONICO'S, N.Y."
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S, [NEW YORK,N.Y.]",
+                "l": "DELMONICO'S, [NEW YORK,N.Y.]"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S",
+                "l": "DELMONICO'S"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S[NY]",
+                "l": "DELMONICO'S[NY]"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S  NY",
+                "l": "DELMONICO'S  NY"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S,[NEW YORK,NY?]",
+                "l": "DELMONICO'S,[NEW YORK,NY?]"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICOS NY",
+                "l": "DELMONICOS NY"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMOMICO'S,NY",
+                "l": "DELMOMICO'S,NY"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICOS, [NEW YORK, N.Y.]",
+                "l": "DELMONICOS, [NEW YORK, N.Y.]"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S, NEW YORK CITY",
+                "l": "DELMONICO'S, NEW YORK CITY"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICOS, NEW YORK",
+                "l": "DELMONICOS, NEW YORK"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICOS,[NEW YORK]",
+                "l": "DELMONICOS,[NEW YORK]"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICOS, (NY)",
+                "l": "DELMONICOS, (NY)"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S [NEW YORK]",
+                "l": "DELMONICO'S [NEW YORK]"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S NEW YOK CITY",
+                "l": "DELMONICO'S NEW YOK CITY"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S [NY?]",
+                "l": "DELMONICO'S [NY?]"
+              }
+            },
+            {
+              "v": {
+                "v": "[DELMONICO'S], NEW YORK, NY",
+                "l": "[DELMONICO'S], NEW YORK, NY"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICOS, (NEW YORK, NY?)",
+                "l": "DELMONICOS, (NEW YORK, NY?)"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S [NYC]",
+                "l": "DELMONICO'S [NYC]"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S,[NEW YORK, N.Y.]",
+                "l": "DELMONICO'S,[NEW YORK, N.Y.]"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S, [NEW YORK, NY]",
+                "l": "DELMONICO'S, [NEW YORK, NY]"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S,[NEW YORK]",
+                "l": "DELMONICO'S,[NEW YORK]"
+              }
+            },
+            {
+              "v": {
+                "v": "[DELMONICO'S,NEW YORK NY]",
+                "l": "[DELMONICO'S,NEW YORK NY]"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S ",
+                "l": "DELMONICO'S "
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S,[NY]",
+                "l": "DELMONICO'S,[NY]"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICOS, NEW YORK, NY",
+                "l": "DELMONICOS, NEW YORK, NY"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S. NEW YORK, NY",
+                "l": "DELMONICO'S. NEW YORK, NY"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S,NEW YORK,NY",
+                "l": "DELMONICO'S,NEW YORK,NY"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S, FIFTH AVENUE AND FORTY FORTH STREET, NEW YORK",
+                "l": "DELMONICO'S, FIFTH AVENUE AND FORTY FORTH STREET, NEW YORK"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S, (NEW YORK, NY?)",
+                "l": "DELMONICO'S, (NEW YORK, NY?)"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S NY",
+                "l": "DELMONICO'S NY"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S, [NEW YORK, NY];",
+                "l": "DELMONICO'S, [NEW YORK, NY];"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S NEW YORK,NY",
+                "l": "DELMONICO'S NEW YORK,NY"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICOS,[NY]",
+                "l": "DELMONICOS,[NY]"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S,(NY?)",
+                "l": "DELMONICO'S,(NY?)"
+              }
+            },
+            {
+              "v": {
+                "v": "Delmonicos",
+                "l": "Delmonicos"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S, NY",
+                "l": "DELMONICO'S, NY"
+              }
+            },
+            {
+              "v": {
+                "v": "DELMONICO'S, [NEW YORK]",
+                "l": "DELMONICO'S, [NEW YORK]"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*/,\"NEW YORK, NY\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*/,\"NEW YORK, NY\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "place_cleaned",
+          "expression": "value",
+          "columnName": "place_cleaned",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "Waldorf-Astoria",
+                "l": "Waldorf-Astoria"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF-ASTORIA [NY?]",
+                "l": "WALDORF-ASTORIA [NY?]"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF-ASTORIA, THE, NEW YORK, NY",
+                "l": "WALDORF-ASTORIA, THE, NEW YORK, NY"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF ASTORIA HOTEL, NEW YORK, NY",
+                "l": "WALDORF ASTORIA HOTEL, NEW YORK, NY"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF-ASTORIA HOTEL",
+                "l": "WALDORF-ASTORIA HOTEL"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF-ASTORIA,[NY]",
+                "l": "WALDORF-ASTORIA,[NY]"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF ASTORIA, THE",
+                "l": "WALDORF ASTORIA, THE"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF-ASTORIA [NEW YORK]",
+                "l": "WALDORF-ASTORIA [NEW YORK]"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF ASTORIA, NEW YORK, NY",
+                "l": "WALDORF ASTORIA, NEW YORK, NY"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF-ASTORIA,THE,[NEW YORK,NY?]",
+                "l": "WALDORF-ASTORIA,THE,[NEW YORK,NY?]"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF ASTORIA, NY",
+                "l": "WALDORF ASTORIA, NY"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF- ASTORIA, NEW YORK",
+                "l": "WALDORF- ASTORIA, NEW YORK"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF ASTORIA,NEW YORK,NY",
+                "l": "WALDORF ASTORIA,NEW YORK,NY"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF ASTORIA,THE, NEW YORK, NY",
+                "l": "WALDORF ASTORIA,THE, NEW YORK, NY"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF-ASTORIA",
+                "l": "WALDORF-ASTORIA"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDROF-ASTOIA, NEW YORK",
+                "l": "WALDROF-ASTOIA, NEW YORK"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF ASTORIA, THE, [NY,NY]",
+                "l": "WALDORF ASTORIA, THE, [NY,NY]"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF-ASTORIA HOTEL, NEW YORK, NY",
+                "l": "WALDORF-ASTORIA HOTEL, NEW YORK, NY"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF-ASTORIA, NY",
+                "l": "WALDORF-ASTORIA, NY"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF-ASTORIA,NY",
+                "l": "WALDORF-ASTORIA,NY"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF-ASTORIA, [NEW YORK]",
+                "l": "WALDORF-ASTORIA, [NEW YORK]"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF-ASTORIA, NEW YORK, NY",
+                "l": "WALDORF-ASTORIA, NEW YORK, NY"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF-ASTORIA, NEW YORK",
+                "l": "WALDORF-ASTORIA, NEW YORK"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF-ASTORIA, NEW YORK CITY",
+                "l": "WALDORF-ASTORIA, NEW YORK CITY"
+              }
+            },
+            {
+              "v": {
+                "v": "WALDORF-ASTORIA HOTEL, THE, NEW YORK, NY",
+                "l": "WALDORF-ASTORIA HOTEL, THE, NEW YORK, NY"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*/,\"NEW YORK, NY\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*/,\"NEW YORK, NY\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NEW YORK, NY",
+          "NEW YORK, [NY]",
+          "[NEW YORK, NY]",
+          "NEW YORK,NY",
+          "[NEW YORK, NY?]",
+          "(NEW YORK, NY?)",
+          "(NEW YORK,NY)",
+          "NEW YORK, [NY];",
+          "[NEW YORK,NY]",
+          "NEW YORK [NY]",
+          "NEW YORK, NY [?]",
+          "NEW YORK,[NY]",
+          "[New York, NY]",
+          "NEWBURGH, NY",
+          "[NEW YORK, NY];"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "WASHINGTON, DC",
+          "WASHINGTON,D.C.",
+          "WASHINGTON, D.C.",
+          "WASHINGTON,DC",
+          "WASHINGTON DC",
+          "WASHINGTON,[D.C.]",
+          "[WASHINGTON,DC]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "WASHINGTON, DC"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CHICAGO, IL",
+          "CHICAGO,ILL.",
+          "CHICAGO, [IL]",
+          "[CHICAGO, IL]",
+          "(CHICAGO, ILL)",
+          "CHICAGO,ILL;",
+          "(CHICAGO,IL)",
+          "CHICAGO ,ILL",
+          "CHICAGO IL",
+          "CHICAGO [IL]",
+          "CHICAGO, ILL",
+          "CHICAGO,IL.",
+          "CHICAGO,ILL",
+          "CHICAGO,[IL]",
+          "[CHICAGO IL?]",
+          "[CHICAGO,ILL]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CHICAGO, IL"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "San Francisco Overland Limited",
+          "SAN FRANCISCO, CA",
+          "[SAN FRANCISCO,CA]",
+          "SAN FRANCISCO,CA;",
+          "SAN FRANCISCO,[CA?]",
+          "(SAN FRANCISCO, CA?)",
+          "SAN FRANCISCO",
+          "SAN FRANCISCO, CA;",
+          "SAN FRANCISCO, CALIF;",
+          "SAN FRANCISCO,CA",
+          "SAN FRANCISCO,CA.",
+          "San Francisco Commercial Club",
+          "San Francisco Commerical Club",
+          "[SAN FRANCISCO, CA]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "SAN FRANCISCO, CA"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "place_cleaned",
+          "expression": "value",
+          "columnName": "place_cleaned",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "GRAND HOTEL,LONDON, ENGLAND",
+                "l": "GRAND HOTEL,LONDON, ENGLAND"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL,MELBOURNE",
+                "l": "GRAND HOTEL,MELBOURNE"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, LONDON, ENGLAND",
+                "l": "GRAND HOTEL, LONDON, ENGLAND"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL,PARISER HOF,FRANKFURT A.M.,[GERMANY]",
+                "l": "GRAND HOTEL,PARISER HOF,FRANKFURT A.M.,[GERMANY]"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, MELBOURNE, (AUSTRALIA?)",
+                "l": "GRAND HOTEL, MELBOURNE, (AUSTRALIA?)"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, CINCINNATI, OH",
+                "l": "GRAND HOTEL, CINCINNATI, OH"
+              }
+            },
+            {
+              "v": {
+                "v": "Grand Hotel Baglioni",
+                "l": "Grand Hotel Baglioni"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, CINCINNATI [OH]",
+                "l": "GRAND HOTEL, CINCINNATI [OH]"
+              }
+            },
+            {
+              "v": {
+                "v": "Grand Hotel Restaurant Central",
+                "l": "Grand Hotel Restaurant Central"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, CINCINNATI OH;",
+                "l": "GRAND HOTEL, CINCINNATI OH;"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL,TRAFALGAR SQUARE,LONDON,ENGLAND",
+                "l": "GRAND HOTEL,TRAFALGAR SQUARE,LONDON,ENGLAND"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, [S. PELLEGRINO?], ITALY",
+                "l": "GRAND HOTEL, [S. PELLEGRINO?], ITALY"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL,PARIS,FRANCE",
+                "l": "GRAND HOTEL,PARIS,FRANCE"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, CINCINNATI OH",
+                "l": "GRAND HOTEL, CINCINNATI OH"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, [CINCINNATI, OH]",
+                "l": "GRAND HOTEL, [CINCINNATI, OH]"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL",
+                "l": "GRAND HOTEL"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, THE, LONDON,[ENGLAND]",
+                "l": "GRAND HOTEL, THE, LONDON,[ENGLAND]"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, MELBOURNE;",
+                "l": "GRAND HOTEL, MELBOURNE;"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*CINCINNATI.*/,\"CINCINNATI, OH\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*CINCINNATI.*/,\"CINCINNATI, OH\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "place_cleaned",
+          "expression": "value",
+          "columnName": "place_cleaned",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "GRAND HOTEL,LONDON, ENGLAND",
+                "l": "GRAND HOTEL,LONDON, ENGLAND"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL,MELBOURNE",
+                "l": "GRAND HOTEL,MELBOURNE"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, LONDON, ENGLAND",
+                "l": "GRAND HOTEL, LONDON, ENGLAND"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL,PARISER HOF,FRANKFURT A.M.,[GERMANY]",
+                "l": "GRAND HOTEL,PARISER HOF,FRANKFURT A.M.,[GERMANY]"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, MELBOURNE, (AUSTRALIA?)",
+                "l": "GRAND HOTEL, MELBOURNE, (AUSTRALIA?)"
+              }
+            },
+            {
+              "v": {
+                "v": "Grand Hotel Baglioni",
+                "l": "Grand Hotel Baglioni"
+              }
+            },
+            {
+              "v": {
+                "v": "Grand Hotel Restaurant Central",
+                "l": "Grand Hotel Restaurant Central"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL,TRAFALGAR SQUARE,LONDON,ENGLAND",
+                "l": "GRAND HOTEL,TRAFALGAR SQUARE,LONDON,ENGLAND"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, [S. PELLEGRINO?], ITALY",
+                "l": "GRAND HOTEL, [S. PELLEGRINO?], ITALY"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL,PARIS,FRANCE",
+                "l": "GRAND HOTEL,PARIS,FRANCE"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL",
+                "l": "GRAND HOTEL"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, THE, LONDON,[ENGLAND]",
+                "l": "GRAND HOTEL, THE, LONDON,[ENGLAND]"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, MELBOURNE;",
+                "l": "GRAND HOTEL, MELBOURNE;"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, CINCINNATI, OH",
+                "l": "GRAND HOTEL, CINCINNATI, OH"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, CINCINNATI [OH]",
+                "l": "GRAND HOTEL, CINCINNATI [OH]"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, CINCINNATI OH;",
+                "l": "GRAND HOTEL, CINCINNATI OH;"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, CINCINNATI OH",
+                "l": "GRAND HOTEL, CINCINNATI OH"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, [CINCINNATI, OH]",
+                "l": "GRAND HOTEL, [CINCINNATI, OH]"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*LONDON.*/,\"LONDON, ENGLAND\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*LONDON.*/,\"LONDON, ENGLAND\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "place_cleaned",
+          "expression": "value",
+          "columnName": "place_cleaned",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "GRAND HOTEL,MELBOURNE",
+                "l": "GRAND HOTEL,MELBOURNE"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL,PARISER HOF,FRANKFURT A.M.,[GERMANY]",
+                "l": "GRAND HOTEL,PARISER HOF,FRANKFURT A.M.,[GERMANY]"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, MELBOURNE, (AUSTRALIA?)",
+                "l": "GRAND HOTEL, MELBOURNE, (AUSTRALIA?)"
+              }
+            },
+            {
+              "v": {
+                "v": "Grand Hotel Baglioni",
+                "l": "Grand Hotel Baglioni"
+              }
+            },
+            {
+              "v": {
+                "v": "Grand Hotel Restaurant Central",
+                "l": "Grand Hotel Restaurant Central"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, [S. PELLEGRINO?], ITALY",
+                "l": "GRAND HOTEL, [S. PELLEGRINO?], ITALY"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL,PARIS,FRANCE",
+                "l": "GRAND HOTEL,PARIS,FRANCE"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL",
+                "l": "GRAND HOTEL"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, MELBOURNE;",
+                "l": "GRAND HOTEL, MELBOURNE;"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL,LONDON, ENGLAND",
+                "l": "GRAND HOTEL,LONDON, ENGLAND"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, LONDON, ENGLAND",
+                "l": "GRAND HOTEL, LONDON, ENGLAND"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL,TRAFALGAR SQUARE,LONDON,ENGLAND",
+                "l": "GRAND HOTEL,TRAFALGAR SQUARE,LONDON,ENGLAND"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, THE, LONDON,[ENGLAND]",
+                "l": "GRAND HOTEL, THE, LONDON,[ENGLAND]"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, CINCINNATI, OH",
+                "l": "GRAND HOTEL, CINCINNATI, OH"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, CINCINNATI [OH]",
+                "l": "GRAND HOTEL, CINCINNATI [OH]"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, CINCINNATI OH;",
+                "l": "GRAND HOTEL, CINCINNATI OH;"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, CINCINNATI OH",
+                "l": "GRAND HOTEL, CINCINNATI OH"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, [CINCINNATI, OH]",
+                "l": "GRAND HOTEL, [CINCINNATI, OH]"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*PARIS.*/,\"PARIS, FRANCE\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*PARIS.*/,\"PARIS, FRANCE\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "place_cleaned",
+          "expression": "value",
+          "columnName": "place_cleaned",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "GRAND HOTEL,MELBOURNE",
+                "l": "GRAND HOTEL,MELBOURNE"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, MELBOURNE, (AUSTRALIA?)",
+                "l": "GRAND HOTEL, MELBOURNE, (AUSTRALIA?)"
+              }
+            },
+            {
+              "v": {
+                "v": "Grand Hotel Baglioni",
+                "l": "Grand Hotel Baglioni"
+              }
+            },
+            {
+              "v": {
+                "v": "Grand Hotel Restaurant Central",
+                "l": "Grand Hotel Restaurant Central"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, [S. PELLEGRINO?], ITALY",
+                "l": "GRAND HOTEL, [S. PELLEGRINO?], ITALY"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL",
+                "l": "GRAND HOTEL"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, MELBOURNE;",
+                "l": "GRAND HOTEL, MELBOURNE;"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL,PARISER HOF,FRANKFURT A.M.,[GERMANY]",
+                "l": "GRAND HOTEL,PARISER HOF,FRANKFURT A.M.,[GERMANY]"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL,PARIS,FRANCE",
+                "l": "GRAND HOTEL,PARIS,FRANCE"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL,LONDON, ENGLAND",
+                "l": "GRAND HOTEL,LONDON, ENGLAND"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, LONDON, ENGLAND",
+                "l": "GRAND HOTEL, LONDON, ENGLAND"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL,TRAFALGAR SQUARE,LONDON,ENGLAND",
+                "l": "GRAND HOTEL,TRAFALGAR SQUARE,LONDON,ENGLAND"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, THE, LONDON,[ENGLAND]",
+                "l": "GRAND HOTEL, THE, LONDON,[ENGLAND]"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, CINCINNATI, OH",
+                "l": "GRAND HOTEL, CINCINNATI, OH"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, CINCINNATI [OH]",
+                "l": "GRAND HOTEL, CINCINNATI [OH]"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, CINCINNATI OH;",
+                "l": "GRAND HOTEL, CINCINNATI OH;"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, CINCINNATI OH",
+                "l": "GRAND HOTEL, CINCINNATI OH"
+              }
+            },
+            {
+              "v": {
+                "v": "GRAND HOTEL, [CINCINNATI, OH]",
+                "l": "GRAND HOTEL, [CINCINNATI, OH]"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*MELBOURNE.*/,\"MELBOURNE, AUSTRALIA\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*MELBOURNE.*/,\"MELBOURNE, AUSTRALIA\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NEW YORK, NYNEW YORK, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NEW YORK"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "TAMPA,FLA."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "TAMPA, FL"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ST.AUGUSTINE,FLA."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ST AUGUSTINE, FL"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "TAMPA,FL"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "TAMPA, FL"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "[NY]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NEW YORK CITY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ELLICOTT SQUARE, BUFFALO, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "BUFFALO, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CLINTON,NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CLINTON, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NARRAGANSETT PIER R.I."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NARRAGANSETT PIER, RI"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "MANHATTAN HOTEL, NEW YORK, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "PARIS,FRANCE"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PARIS, FRANCE"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "[TOKYO, JAPAN]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "TOKYO, JAPAN"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ASTOR HOTEL, NEW YORK, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "MADISON SQUARE, NEW YORK"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "SAVOY HOTEL, NEW YORK, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "SHERRY'S, NEW YORK, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "SHERRY'S [NY]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "[CLEVELAND, OH]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CLEVELAND, OH"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "66TH ST AND BROADWAY,NEW YORK,NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "BROADWAY AND 73RD STREET, NEW YORK"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "HOTEL MANHATTAN, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "LOS ANGELES,CA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "LOS ANGELES, CA"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "PALACE HOTEL, SAN FRANCISCO, CA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "SAN FRANCISCO, CA"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "\"ST. LOUIS\""
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ST LOUIS, MO"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "BOSTON,MA."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "BOSTON, MA"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "BUFFALO,NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "BUFFALO, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "HOTEL MANHATTAN,NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "MIAMI BAY BISCAYNE,FLA."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "MIAMI BAY BISCAYNE, FL"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "PHILADELPHIA [PA]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PHILADELPHIA, PA"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "\"ST.LOUIS\""
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ST LOUIS, MO"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "(NEW YORK?)"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "(NY)"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ASHEVILLE,NC"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ASHEVILLE, NC"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "AUDITORIUM, CHICAGO, IL"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CHICAGO, IL"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "BLEECKER STREET, NEW YORK"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CLEVELAND,OHIO"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CLEVELAND, OH"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ELLICOTT SQUARE,BUFFALO,[NY?]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "BUFFALO, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "FANEUIL HALL, BOSTON, MA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "BOSTON, MA"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "place_cleaned",
+          "expression": "value",
+          "columnName": "place_cleaned",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "MANHATTAN BEACH, LONG ISLAND [NY]",
+                "l": "MANHATTAN BEACH, LONG ISLAND [NY]"
+              }
+            },
+            {
+              "v": {
+                "v": "MANHATTAN BEACH, L.I. NY",
+                "l": "MANHATTAN BEACH, L.I. NY"
+              }
+            },
+            {
+              "v": {
+                "v": "MANHATTAN BEACH, LONG ISLAND, [NY]",
+                "l": "MANHATTAN BEACH, LONG ISLAND, [NY]"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "MANHATTAN BEACH",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*/,\"LONG ISLAND, NY\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*/,\"LONG ISLAND, NY\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "place_cleaned",
+          "expression": "value",
+          "columnName": "place_cleaned",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "USMS ST LOUIS",
+                "l": "USMS ST LOUIS"
+              }
+            },
+            {
+              "v": {
+                "v": "ST.NICHOLAS HOTEL,ST. LOUIS,MO;",
+                "l": "ST.NICHOLAS HOTEL,ST. LOUIS,MO;"
+              }
+            },
+            {
+              "v": {
+                "v": "SOUTHERN,THE,ST.LOUIS,MO",
+                "l": "SOUTHERN,THE,ST.LOUIS,MO"
+              }
+            },
+            {
+              "v": {
+                "v": "MERCANTILE CLUB, ST LOUIS [MO]",
+                "l": "MERCANTILE CLUB, ST LOUIS [MO]"
+              }
+            },
+            {
+              "v": {
+                "v": "SOUTHERN HOTEL,[ST.LOUIS,MO]",
+                "l": "SOUTHERN HOTEL,[ST.LOUIS,MO]"
+              }
+            },
+            {
+              "v": {
+                "v": "CHEMICAL BUILDING, 8TH AND OLIVE, ST. LOUIS, MO",
+                "l": "CHEMICAL BUILDING, 8TH AND OLIVE, ST. LOUIS, MO"
+              }
+            },
+            {
+              "v": {
+                "v": "[ST.LOUIS,MO?]",
+                "l": "[ST.LOUIS,MO?]"
+              }
+            },
+            {
+              "v": {
+                "v": "SOUTHERN HOTEL,ST.LOUIS",
+                "l": "SOUTHERN HOTEL,ST.LOUIS"
+              }
+            },
+            {
+              "v": {
+                "v": "PLANTERS HOTEL, ST.LOUIS,MO",
+                "l": "PLANTERS HOTEL, ST.LOUIS,MO"
+              }
+            },
+            {
+              "v": {
+                "v": "SOUTHERN HOTEL, [ST. LOUIS, MO]",
+                "l": "SOUTHERN HOTEL, [ST. LOUIS, MO]"
+              }
+            },
+            {
+              "v": {
+                "v": "JEFFERSON HOTEL, SAINT LOUIS, MO",
+                "l": "JEFFERSON HOTEL, SAINT LOUIS, MO"
+              }
+            },
+            {
+              "v": {
+                "v": "JEFFERSON HOTEL, ST.  LOUIS [MO]",
+                "l": "JEFFERSON HOTEL, ST.  LOUIS [MO]"
+              }
+            },
+            {
+              "v": {
+                "v": "HOTEL JEFFERSON, ST. LOUIS, MO",
+                "l": "HOTEL JEFFERSON, ST. LOUIS, MO"
+              }
+            },
+            {
+              "v": {
+                "v": "ST. LOUIS CLUB, [?ST. LOUIS, MO?]",
+                "l": "ST. LOUIS CLUB, [?ST. LOUIS, MO?]"
+              }
+            },
+            {
+              "v": {
+                "v": "ST.LOUIS CLUB, ST.LOUIS,MO.",
+                "l": "ST.LOUIS CLUB, ST.LOUIS,MO."
+              }
+            },
+            {
+              "v": {
+                "v": "ST LOUIS,MO",
+                "l": "ST LOUIS,MO"
+              }
+            },
+            {
+              "v": {
+                "v": "ST. NICHOLAS HOTEL, ST.LOUIS, MO",
+                "l": "ST. NICHOLAS HOTEL, ST.LOUIS, MO"
+              }
+            },
+            {
+              "v": {
+                "v": "ST LOUIS, MO",
+                "l": "ST LOUIS, MO"
+              }
+            },
+            {
+              "v": {
+                "v": "ST.LOUIS CLUB,(ST.LOUIS,MISSOURI)",
+                "l": "ST.LOUIS CLUB,(ST.LOUIS,MISSOURI)"
+              }
+            },
+            {
+              "v": {
+                "v": "SOUTHERN HOTEL, ST. LOUIS, MO",
+                "l": "SOUTHERN HOTEL, ST. LOUIS, MO"
+              }
+            },
+            {
+              "v": {
+                "v": "SOUTHERN HOTEL,ST. LOUIS,MO.",
+                "l": "SOUTHERN HOTEL,ST. LOUIS,MO."
+              }
+            },
+            {
+              "v": {
+                "v": "PLANTERS HOTEL, ST. LOUIS, [MO]",
+                "l": "PLANTERS HOTEL, ST. LOUIS, [MO]"
+              }
+            },
+            {
+              "v": {
+                "v": "PLANTERS HOTEL, ST. LOUIS,[MO]",
+                "l": "PLANTERS HOTEL, ST. LOUIS,[MO]"
+              }
+            },
+            {
+              "v": {
+                "v": "ST. LOUIS, [MO] MENU SAYS U.S.A.",
+                "l": "ST. LOUIS, [MO] MENU SAYS U.S.A."
+              }
+            },
+            {
+              "v": {
+                "v": "MERCANTILE CLUB HOUSE, ST. LOUIS MO",
+                "l": "MERCANTILE CLUB HOUSE, ST. LOUIS MO"
+              }
+            },
+            {
+              "v": {
+                "v": "PLANTERS HOTEL, (ST.LOUIS, MO?)",
+                "l": "PLANTERS HOTEL, (ST.LOUIS, MO?)"
+              }
+            },
+            {
+              "v": {
+                "v": "ST. LOUIS [MO]",
+                "l": "ST. LOUIS [MO]"
+              }
+            },
+            {
+              "v": {
+                "v": "KINGS HIGHWAY AND WASHINGTON BOULEVARD, ST. LOUIS [MO]",
+                "l": "KINGS HIGHWAY AND WASHINGTON BOULEVARD, ST. LOUIS [MO]"
+              }
+            },
+            {
+              "v": {
+                "v": "MERCANTILE CLUB (ST. LOUIS)",
+                "l": "MERCANTILE CLUB (ST. LOUIS)"
+              }
+            },
+            {
+              "v": {
+                "v": "MERCANTILE CLUB,ST.LOUIS, [MISSOURI]",
+                "l": "MERCANTILE CLUB,ST.LOUIS, [MISSOURI]"
+              }
+            },
+            {
+              "v": {
+                "v": "MERCANTILE CLUB, ST. LOUIS, MO",
+                "l": "MERCANTILE CLUB, ST. LOUIS, MO"
+              }
+            },
+            {
+              "v": {
+                "v": "ST. LOUIS, [MO];",
+                "l": "ST. LOUIS, [MO];"
+              }
+            },
+            {
+              "v": {
+                "v": "SAINT LOUIS, MO",
+                "l": "SAINT LOUIS, MO"
+              }
+            },
+            {
+              "v": {
+                "v": "[ST.LOUIS, MO]",
+                "l": "[ST.LOUIS, MO]"
+              }
+            },
+            {
+              "v": {
+                "v": "MERCANTILE CLUB, ST.LOUIS MO",
+                "l": "MERCANTILE CLUB, ST.LOUIS MO"
+              }
+            },
+            {
+              "v": {
+                "v": "COMSERVATORY PALACE HOTEL,[ST. LOUIS,MO.]",
+                "l": "COMSERVATORY PALACE HOTEL,[ST. LOUIS,MO.]"
+              }
+            },
+            {
+              "v": {
+                "v": "MERCANTILE CLUB (ST LOUIS, MO)",
+                "l": "MERCANTILE CLUB (ST LOUIS, MO)"
+              }
+            },
+            {
+              "v": {
+                "v": "ST. LOUIS, MO",
+                "l": "ST. LOUIS, MO"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "LOUIS",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*/,\"ST LOUIS, MO\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*/,\"ST LOUIS, MO\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "LOUISVILLE",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*/,\"LOUISVILLE, KY\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*/,\"LOUISVILLE, KY\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "LOUISVILLE",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "LOUISVILLE, KYLOUISVILLE, KY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "LOUISVILLE, KY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ST. AUGUSTINE, FL"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ST AUGUSTINE, FL"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "CLINTON",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "HOTEL CHAMPLAIN, CLINTON COUNTY, NY;"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CLINTON, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "CLINTON",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CLINTON COUNTY, NY."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CLINTON, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "CLINTON",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CLINTON COUNTY, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CLINTON, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "CLINTON",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CLINTON CO., NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CLINTON, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "CLINTON",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CLINTON COUNTY NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CLINTON, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "CLINTON",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CLINTON COUNTY,NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CLINTON, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "CLINTON",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CLINTON COUNTY.NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CLINTON, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "BOSTON",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*BOSTON,.*/,\"BOSTON, MA\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*BOSTON,.*/,\"BOSTON, MA\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "BOSTON",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "BOSTON MA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "BOSTON, MA"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "BOSTON",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*BOSTON.*MA.*/,\"BOSTON, MA\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*BOSTON.*MA.*/,\"BOSTON, MA\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "BOSTON",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "YOUNG'S HOTEL,BOSTON"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "BOSTON, MA"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "PHIL",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*PHILADELPHIA.*PA.*/,\"PHILADELPHIA, PA\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*PHILADELPHIA.*PA.*/,\"PHILADELPHIA, PA\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "PHIL",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "HOTEL BELLEVUE, [PHILADEPHIA, PA]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PHILADEPHIA, PA"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "PHIL",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "PHILADELPHIA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PHILADELPHIA, PA"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "PHIL",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "THE BELLEVUE, PHILA,PA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PHILADELPHIA, PA"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "PHIL",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "THE BELLEVUE, (PHILDELPHIA PA?)"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PHILDELPHIA, PA"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "CHIC",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "[CHICAO IL?]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CHICAGO, IL"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "CHIC",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*CHICAGO.*IL.*/,\"CHICAGO, IL\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*CHICAGO.*IL.*/,\"CHICAGO, IL\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "CHIC",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "AUDITORIUM HOEL, CHICAO, IL"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CHICAGO, IL"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*ENROUTE.*/,\"ENROUTE\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*ENROUTE.*/,\"ENROUTE\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*EN ROUTE.*/,\"ENROUTE\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*EN ROUTE.*/,\"ENROUTE\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "DC",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*DC.*/,\"WASHINGTON, DC\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*DC.*/,\"WASHINGTON, DC\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ST LOUIS, MOST LOUIS, MO"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ST LOUIS, MO"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ST.AUGUSTINE,FL"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ST AUGUSTINE, FL"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "[NEW YORK]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ST. AUGUSTINE,  FL"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ST AUGUSTINE,  FL"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "MIAMI BISCAYNE BAY,FLA."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "MIAMI BISCAYNE BAY, FL"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "57 BROAD STREET, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "BISCAYNE",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place",
+    "expression": "value.replace(/.*BISCAYNE.*/,\"MIAMI BAY BISCAYNE, FL\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place using expression value.replace(/.*BISCAYNE.*/,\"MIAMI BAY BISCAYNE, FL\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "ORLEANS",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*ORLEANS.*/,\"NEW ORLEANS, LA\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*ORLEANS.*/,\"NEW ORLEANS, LA\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "AUGUSTINE",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*AUGUSTINE.*/,\"ST AUGUSTINE, FL\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*AUGUSTINE.*/,\"ST AUGUSTINE, FL\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "MILWAUKEE",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place",
+    "expression": "value.replace(/.*MILWAUKEE.*WI.*/,\"MILWAUKEE, WI\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place using expression value.replace(/.*MILWAUKEE.*WI.*/,\"MILWAUKEE, WI\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "FRANCISCO",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*FRANCISCO.*CA.*/,\"SAN FRANCISCO, CA\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*FRANCISCO.*CA.*/,\"SAN FRANCISCO, CA\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "BUFFALO",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*BUFFALO.*NY.*/,\"BUFFALO, NY\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*BUFFALO.*NY.*/,\"BUFFALO, NY\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "BUFFALO",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "HOTEL IROQUOIS,(BUFFALO,N.Y.)"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "BUFFALO, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "SARATOGA",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*SARATOGA.*NY.*/,\"SARATOGA SPRINGS, NY\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*SARATOGA.*NY.*/,\"SARATOGA SPRINGS, NY\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "PIER",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(\".*PIER.*R.*I.*\",\"NARRAGANSETT PIER, RI\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(\".*PIER.*R.*I.*\",\"NARRAGANSETT PIER, RI\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "PIER",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*PIER.*R\\.?I.*/,\"NARRAGANSETT PIER, RI\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*PIER.*R\\.?I.*/,\"NARRAGANSETT PIER, RI\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "CLEVELAND",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*CLEVELAND.*OH.*/,\"CLEVELAND, OH\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*CLEVELAND.*OH.*/,\"CLEVELAND, OH\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "BROOKLYN",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*BROOKLYN.*N(EW )?Y.*/,\"BROOKLYN, NY\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*BROOKLYN.*N(EW )?Y.*/,\"BROOKLYN, NY\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "ATLANTIC",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*ATLANTIC CITY.*/,\"ATLANTIC CITY, NJ\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*ATLANTIC CITY.*/,\"ATLANTIC CITY, NJ\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "PALM",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "PALM BEACH,FLA."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PALM BEACH, FL"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "LONG BEACH",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*LONG BEACH.*NY.*/,\"LONG ISLAND, NY\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*LONG BEACH.*NY.*/,\"LONG ISLAND, NY\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "LONG ",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "LONG ISLAND, NYLONG ISLAND, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "LONG ISLAND, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "LONG ",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "HOLLANDS, LONG ISLAND,[NY]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "LONG ISLAND, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "LONG ",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "[LONG ISLAND?]"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "LONG ISLAND, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "CORONAD",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(\"CORONADA\",\"CORONADO\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(\"CORONADA\",\"CORONADO\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "CORONAD",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*CORONADO BEACH.*/,\"CORONADO BEACH, CA\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*CORONADO BEACH.*/,\"CORONADO BEACH, CA\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "ALTOONA",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*ALTOONA.*/,\"ALTOONA, PA\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*ALTOONA.*/,\"ALTOONA, PA\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "DETROIT",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*DETROIT.*/,\"DETROIT, MI\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*DETROIT.*/,\"DETROIT, MI\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*DINING CAR.*/i,\"RAILROAD\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*DINING CAR.*/i,\"RAILROAD\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "MOUNTAINS",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "WHITE MOUNTAINS,N.H."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "WHITE MOUNTAINS, NH"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  }
+]
