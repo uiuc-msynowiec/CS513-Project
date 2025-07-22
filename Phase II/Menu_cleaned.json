@@ -3637,5 +3637,5152 @@
       }
     ],
     "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/[\\[\\]\\.\\?]/,\"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/[\\[\\]\\.\\?]/,\"\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "place_cleaned",
+          "expression": "value",
+          "columnName": "place_cleaned",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "PHILADEPHIA, PA",
+                "l": "PHILADEPHIA, PA"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "phila",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "PHILADEPHIA, PA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PHILADELPHIA, PA"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "new york",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "HOTEL ASTOR, NEW YORK"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "new york",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NEW YORK;"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "new york, ?NY",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*/,\"NEW YORK, NY\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*/,\"NEW YORK, NY\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "new york, ?NY",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NEW YORK, NYNEW YORK, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "tampa",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"TAMPA, FL\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"TAMPA, FL\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "st louis",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ABOARD USMSST LOUIS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ABOARD USMS ST LOUIS"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "atlanta",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"ATLANTA, GA\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"ATLANTA, GA\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "atlantic",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ATLANTIC HOTEL, OCEAN CITY, MD"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "OCEAN CITY, MD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "ocean",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ATANTIC HOTEL, OCEAN CITY, MD"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "OCEAN CITY, MD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "newport",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.*NEWPORT.*RI.*/,\"NEWPORT, RI\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.*NEWPORT.*RI.*/,\"NEWPORT, RI\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "jacksonville",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"JACKSONVILLE, FL\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"JACKSONVILLE, FL\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "COLORADO",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "PUEBLO,COLORADO"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "PUEBLO, CO"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "COLORADO",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"COLORADO SPRINGS, CO\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"COLORADO SPRINGS, CO\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "WHEELING",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "FORT HENRY CLUB, WHEELING, WV"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "WHEELING, WV"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "NEW YORK",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NEW YORK AND FLORIDA EXPRESS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "NEW YORK",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "HOTEL TEN EYCK, ALBANY, NEW YORK"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ALBANY, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "ALBANY",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"ALBANY, NY\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"ALBANY, NY\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "NEW YORK",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"NEW YORK, NY\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"NEW YORK, NY\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "HARTFORD",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"HARTFORD, CT\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"HARTFORD, CT\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "NEW HAVEN",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"NEW HAVEN, CT\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"NEW HAVEN, CT\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Southern Pacific"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "The Beaver, Southern Pacific"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CAFE CAR;"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "venue",
+          "columnName": "venue",
+          "query": "RAILROA",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"RAILROAD\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"RAILROAD\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "venue",
+          "columnName": "venue",
+          "query": "RAILROA",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ENROUTE"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "SUNSET OGDEN & SHASTA ROUTES"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "The Waldorf-Astoria"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "UNKNOWN"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Gramercy Park Hotel"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Park Lane; 299 Park Avenue"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "SUNSET OGDEN & SHASTA ROUTE"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NYC"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ON BOARD"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ON BOARD"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ON BOARD SS NORTH WEST"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Gramercy Park Hotel; 2 Lexington Avenue at 21st Street"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "GRAMERCY",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"NEW YORK, NY\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"NEW YORK, NY\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Park Lane"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Russian Tea Room; 150 West 57th Street"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "SS ST PAUL"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "UNKNOWN"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "STEAMSHIP NORTH WEST"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "66TH STREET AND BROADWAY NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ABOARD USMS ST LOUIS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "L'Aiglon; 13 East 55th Street"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "BROADWAY AND 23RD STREET, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "57 BROAD ST NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "AT SEA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "UNKNOWN"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Park Lane; Park Lounge"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Maurice"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "NYC",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"NEW YORK, NY\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"NEW YORK, NY\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "NEWARK",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "8 CENTRAL AVENUE, NEWARK, NJ"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEWARK, NJ"
+      }
+    ],
+    "description": "Mass edit cells in column place"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NEW YOK, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "NY",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "WEST NEW BRIGHTON, STATEN ISLAND, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "STATEN ISLAND, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "NY",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Southern Pacific Company, SUNSET OGDEN & SHASTA ROUTES"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "STREET.*NY",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"NEW YORK, NY\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"NEW YORK, NY\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "NY",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "SYRACUSE NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "SYRACUSE, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "NY",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "SYRACUSE,NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "SYRACUSE, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "ST.*NY",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "STATEN ISLAND, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "STATEN ISLAND, NTEMPY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "ST.*NY",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"NEW YORK, NY\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"NEW YORK, NY\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "NTEMPY",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "STATEN ISLAND, NTEMPY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "STATEN ISLAND, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "AVE.*NY",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "SEASIDE AVENUE, ROCKAWAY BEACH, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ROCKAWAY BEACH, NTEMPY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "AVE.*NY",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"NEW YORK, NY\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"NEW YORK, NY\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "NY",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "BATH BEACH, BKLYN,NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "BROOKLYN, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "B.*WA.*NY",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"NEW YORK, NY\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"NEW YORK, NY\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NIAGARA TO THE SEA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "UNKNOWN"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ON BOARD SS NORTH LAND"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Tadich Grill; 545 Clay Street"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "UNKNOWN"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "The Mandarin, Garfield 6464"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "UNKNOWN"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "The Plaza"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "UNKNOWN"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CAR SAVOY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CAR WALTON"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CENTRAL MISSISSIPPI VALLEY ROUTE"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "PARK ROW BLDG NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "YELLOWSTONE PARK LINE"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "(MONTEREY, CAL)"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "MONTEREY, CA"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "120 UNIVERSITY PLACE, NY, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "13 MONTGOMERY STREET (JERSEY CITY, NJ)"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "JERSEY CITY, NJ"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "16 LAFAYETTE PLACE NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "16 LAFAYETTE PLACE;"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "25 PARK ROW, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "261 BOWERY,NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "3 EXCHANGE PLACE,JERSEY CITY, NJ"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "JERSEY CITY, NJ"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "9 & 10 BATTERY PL NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "90 MONTGOMERY STREET, JERSEY CITY, NJ"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "JERSEY CITY, NJ"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "AUSABLE CHASM NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "BANFF,MAINE"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "BANFF, ME"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "BELMAR,NJ"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "BELMAR, NJ"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Beverly Hills Hotel"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "LOS ANGELES, CA"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "BLACK DIAMOND EXPRESS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CAR APPIUS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CAR HOLLAND"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CAR LIVIUS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CENTRAL PARK,NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CHCAGO, IL"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CHICAGO, IL"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "CINCINNATI,OH"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "CINCINNATI, OH"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "COLUMBUS HOTEL,NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Diner - Williamsburg, Brooklyn"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "BROOKLYN, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "GREAT NORTHERN RY LINE"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "HAVANA,CUBA"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "HAVANA, CUBA"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "HOBOKEN,NJ"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "HOBOKEN, NJ"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "HOBOKEN STATION, NJ"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "HOBOKEN, NJ"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "HOLLAND HOUSE NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "HOTEL COLOMBO,NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "HOTEL SAVOY, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "HOTEL VICTORY,PUT-IN-BAY ISLAND,LAKE ERIE,OH"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "LAKE ERIE, OH"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "place_cleaned",
+          "expression": "value",
+          "columnName": "place_cleaned",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "JC's",
+                "l": "JC's"
+              }
+            },
+            {
+              "v": {
+                "v": "Canlis'",
+                "l": "Canlis'"
+              }
+            },
+            {
+              "v": {
+                "v": "Grandview Gardens",
+                "l": "Grandview Gardens"
+              }
+            },
+            {
+              "v": {
+                "v": "ELECTRIC TOWER RESTAURANT,PAN AMERICAN EXPOSITION",
+                "l": "ELECTRIC TOWER RESTAURANT,PAN AMERICAN EXPOSITION"
+              }
+            },
+            {
+              "v": {
+                "v": "Aurora",
+                "l": "Aurora"
+              }
+            },
+            {
+              "v": {
+                "v": "Unknown",
+                "l": "Unknown"
+              }
+            },
+            {
+              "v": {
+                "v": "Girafe",
+                "l": "Girafe"
+              }
+            },
+            {
+              "v": {
+                "v": "Emily Shaw's Inn",
+                "l": "Emily Shaw's Inn"
+              }
+            },
+            {
+              "v": {
+                "v": "Blue Onion Drive-In Restaurants",
+                "l": "Blue Onion Drive-In Restaurants"
+              }
+            },
+            {
+              "v": {
+                "v": "Alfredo; Citicorp Center, 53rd Street and Lexington Avenue",
+                "l": "Alfredo; Citicorp Center, 53rd Street and Lexington Avenue"
+              }
+            },
+            {
+              "v": {
+                "v": "FRANCONIA NOTCH NH",
+                "l": "FRANCONIA NOTCH NH"
+              }
+            },
+            {
+              "v": {
+                "v": "Forbidden City",
+                "l": "Forbidden City"
+              }
+            },
+            {
+              "v": {
+                "v": "FIFTH AVENUE & FIFTY-NINTH STREET;",
+                "l": "FIFTH AVENUE & FIFTY-NINTH STREET;"
+              }
+            },
+            {
+              "v": {
+                "v": "DAMPFER \"KRONPRINZ WILHLEM\"",
+                "l": "DAMPFER \"KRONPRINZ WILHLEM\""
+              }
+            },
+            {
+              "v": {
+                "v": "I Tre Merli Bistro; 725 Fifth Avenue",
+                "l": "I Tre Merli Bistro; 725 Fifth Avenue"
+              }
+            },
+            {
+              "v": {
+                "v": "Bellini",
+                "l": "Bellini"
+              }
+            },
+            {
+              "v": {
+                "v": "Balthazar",
+                "l": "Balthazar"
+              }
+            },
+            {
+              "v": {
+                "v": "Chemists' Club",
+                "l": "Chemists' Club"
+              }
+            },
+            {
+              "v": {
+                "v": "Hotel del Coronado",
+                "l": "Hotel del Coronado"
+              }
+            },
+            {
+              "v": {
+                "v": "Kay Kay Garden",
+                "l": "Kay Kay Garden"
+              }
+            },
+            {
+              "v": {
+                "v": "Akbar",
+                "l": "Akbar"
+              }
+            },
+            {
+              "v": {
+                "v": "BACIOCHIE",
+                "l": "BACIOCHIE"
+              }
+            },
+            {
+              "v": {
+                "v": "178 & 180 MADISON ST",
+                "l": "178 & 180 MADISON ST"
+              }
+            },
+            {
+              "v": {
+                "v": "CAR ASTORIA",
+                "l": "CAR ASTORIA"
+              }
+            },
+            {
+              "v": {
+                "v": "Claude's",
+                "l": "Claude's"
+              }
+            },
+            {
+              "v": {
+                "v": "India House",
+                "l": "India House"
+              }
+            },
+            {
+              "v": {
+                "v": "CP",
+                "l": "CP"
+              }
+            },
+            {
+              "v": {
+                "v": "60 West 55th Street",
+                "l": "60 West 55th Street"
+              }
+            },
+            {
+              "v": {
+                "v": "The Gate of Cleve; Sheraton-Atlantic Hotel",
+                "l": "The Gate of Cleve; Sheraton-Atlantic Hotel"
+              }
+            },
+            {
+              "v": {
+                "v": "BROADWAY AND 63RD ATREET",
+                "l": "BROADWAY AND 63RD ATREET"
+              }
+            },
+            {
+              "v": {
+                "v": "Green Mill",
+                "l": "Green Mill"
+              }
+            },
+            {
+              "v": {
+                "v": "Le Perigord; 405 East 52nd Street",
+                "l": "Le Perigord; 405 East 52nd Street"
+              }
+            },
+            {
+              "v": {
+                "v": "Coffee House of the Statler Hilton",
+                "l": "Coffee House of the Statler Hilton"
+              }
+            },
+            {
+              "v": {
+                "v": "Christer's",
+                "l": "Christer's"
+              }
+            },
+            {
+              "v": {
+                "v": "6TH AVENUE AND 18TH STREET",
+                "l": "6TH AVENUE AND 18TH STREET"
+              }
+            },
+            {
+              "v": {
+                "v": "CLUB DINING ROOM",
+                "l": "CLUB DINING ROOM"
+              }
+            },
+            {
+              "v": {
+                "v": "BEAVER ST ",
+                "l": "BEAVER ST "
+              }
+            },
+            {
+              "v": {
+                "v": "Edwardian Room",
+                "l": "Edwardian Room"
+              }
+            },
+            {
+              "v": {
+                "v": "Gosman's Dock",
+                "l": "Gosman's Dock"
+              }
+            },
+            {
+              "v": {
+                "v": "Anthony's Fish Grottos",
+                "l": "Anthony's Fish Grottos"
+              }
+            },
+            {
+              "v": {
+                "v": "663-665 BROADWAY",
+                "l": "663-665 BROADWAY"
+              }
+            },
+            {
+              "v": {
+                "v": "Cafe del Sol",
+                "l": "Cafe del Sol"
+              }
+            },
+            {
+              "v": {
+                "v": "15 AND 17 WEST HOUSTON STREET",
+                "l": "15 AND 17 WEST HOUSTON STREET"
+              }
+            },
+            {
+              "v": {
+                "v": "General Mess",
+                "l": "General Mess"
+              }
+            },
+            {
+              "v": {
+                "v": "Charlie Brown's",
+                "l": "Charlie Brown's"
+              }
+            },
+            {
+              "v": {
+                "v": "Engine House No 5",
+                "l": "Engine House No 5"
+              }
+            },
+            {
+              "v": {
+                "v": "Caesar's",
+                "l": "Caesar's"
+              }
+            },
+            {
+              "v": {
+                "v": "Cafe Carlyle",
+                "l": "Cafe Carlyle"
+              }
+            },
+            {
+              "v": {
+                "v": "Alexis",
+                "l": "Alexis"
+              }
+            },
+            {
+              "v": {
+                "v": "Karl Ratzsch's",
+                "l": "Karl Ratzsch's"
+              }
+            },
+            {
+              "v": {
+                "v": "2351 3RD AVE NEAR 128TH ST",
+                "l": "2351 3RD AVE NEAR 128TH ST"
+              }
+            },
+            {
+              "v": {
+                "v": "METROPOLITAN OPERA HOUSE",
+                "l": "METROPOLITAN OPERA HOUSE"
+              }
+            },
+            {
+              "v": {
+                "v": "Blum's ",
+                "l": "Blum's "
+              }
+            },
+            {
+              "v": {
+                "v": "Charley Brown's",
+                "l": "Charley Brown's"
+              }
+            },
+            {
+              "v": {
+                "v": "Dish of Salt",
+                "l": "Dish of Salt"
+              }
+            },
+            {
+              "v": {
+                "v": "ChinChin",
+                "l": "ChinChin"
+              }
+            },
+            {
+              "v": {
+                "v": "Bull and Bear",
+                "l": "Bull and Bear"
+              }
+            },
+            {
+              "v": {
+                "v": "Cafe Promenade",
+                "l": "Cafe Promenade"
+              }
+            },
+            {
+              "v": {
+                "v": "Le Bernardin",
+                "l": "Le Bernardin"
+              }
+            },
+            {
+              "v": {
+                "v": "Agora",
+                "l": "Agora"
+              }
+            },
+            {
+              "v": {
+                "v": "The Plaza; Hilton Hotels",
+                "l": "The Plaza; Hilton Hotels"
+              }
+            },
+            {
+              "v": {
+                "v": "Indo Chine",
+                "l": "Indo Chine"
+              }
+            },
+            {
+              "v": {
+                "v": "414 West 42nd Street",
+                "l": "414 West 42nd Street"
+              }
+            },
+            {
+              "v": {
+                "v": "Library Room",
+                "l": "Library Room"
+              }
+            },
+            {
+              "v": {
+                "v": "CAFE & REST;",
+                "l": "CAFE & REST;"
+              }
+            },
+            {
+              "v": {
+                "v": "Brussels Restaurant",
+                "l": "Brussels Restaurant"
+              }
+            },
+            {
+              "v": {
+                "v": "102 MADISON ST ",
+                "l": "102 MADISON ST "
+              }
+            },
+            {
+              "v": {
+                "v": "Jacqueline Cafe & Bistro; 101 West Fayette Street",
+                "l": "Jacqueline Cafe & Bistro; 101 West Fayette Street"
+              }
+            },
+            {
+              "v": {
+                "v": "Hampshire House",
+                "l": "Hampshire House"
+              }
+            },
+            {
+              "v": {
+                "v": "unknown",
+                "l": "unknown"
+              }
+            },
+            {
+              "v": {
+                "v": "Fiorello's",
+                "l": "Fiorello's"
+              }
+            },
+            {
+              "v": {
+                "v": "Hana-Bishi",
+                "l": "Hana-Bishi"
+              }
+            },
+            {
+              "v": {
+                "v": "Hotel St Francis",
+                "l": "Hotel St Francis"
+              }
+            },
+            {
+              "v": {
+                "v": "ART ROOMS OF THE ACADEMY OF MUSIC",
+                "l": "ART ROOMS OF THE ACADEMY OF MUSIC"
+              }
+            },
+            {
+              "v": {
+                "v": "20 ANN STREET, 149 FULTON ST, 454 SIXTH AVENUE",
+                "l": "20 ANN STREET, 149 FULTON ST, 454 SIXTH AVENUE"
+              }
+            },
+            {
+              "v": {
+                "v": "Alfredo",
+                "l": "Alfredo"
+              }
+            },
+            {
+              "v": {
+                "v": "RMSROTTERDAM",
+                "l": "RMSROTTERDAM"
+              }
+            },
+            {
+              "v": {
+                "v": "Aladdin Studio Tiffin Room",
+                "l": "Aladdin Studio Tiffin Room"
+              }
+            },
+            {
+              "v": {
+                "v": "Fleet Street; 729 Third Avenue",
+                "l": "Fleet Street; 729 Third Avenue"
+              }
+            },
+            {
+              "v": {
+                "v": "Cavanagh's",
+                "l": "Cavanagh's"
+              }
+            },
+            {
+              "v": {
+                "v": "Anthony's Pier 4; 140 Northern Avenue",
+                "l": "Anthony's Pier 4; 140 Northern Avenue"
+              }
+            },
+            {
+              "v": {
+                "v": "66TH STREET AND BR6ADWAY",
+                "l": "66TH STREET AND BR6ADWAY"
+              }
+            },
+            {
+              "v": {
+                "v": "George's Restaurant",
+                "l": "George's Restaurant"
+              }
+            },
+            {
+              "v": {
+                "v": "Ghirardelli Soda Fountain & Candy Shop",
+                "l": "Ghirardelli Soda Fountain & Candy Shop"
+              }
+            },
+            {
+              "v": {
+                "v": "Cafe Chauveron",
+                "l": "Cafe Chauveron"
+              }
+            },
+            {
+              "v": {
+                "v": "Algonquin Hotel",
+                "l": "Algonquin Hotel"
+              }
+            },
+            {
+              "v": {
+                "v": "Jumer's",
+                "l": "Jumer's"
+              }
+            },
+            {
+              "v": {
+                "v": "Applebys",
+                "l": "Applebys"
+              }
+            },
+            {
+              "v": {
+                "v": "Don the Beachcomber",
+                "l": "Don the Beachcomber"
+              }
+            },
+            {
+              "v": {
+                "v": "Estiatorio Milos",
+                "l": "Estiatorio Milos"
+              }
+            },
+            {
+              "v": {
+                "v": "Candlelight Restaurant; 114 Henry Street",
+                "l": "Candlelight Restaurant; 114 Henry Street"
+              }
+            },
+            {
+              "v": {
+                "v": "Cathay House",
+                "l": "Cathay House"
+              }
+            },
+            {
+              "v": {
+                "v": "Hong Chong Burlingame Chop Suey Restaurant",
+                "l": "Hong Chong Burlingame Chop Suey Restaurant"
+              }
+            },
+            {
+              "v": {
+                "v": "21 ANN STREET",
+                "l": "21 ANN STREET"
+              }
+            },
+            {
+              "v": {
+                "v": "Cafe at the Seelbach",
+                "l": "Cafe at the Seelbach"
+              }
+            },
+            {
+              "v": {
+                "v": "HARBIN INN UNKNOWN",
+                "l": "HARBIN INN UNKNOWN"
+              }
+            },
+            {
+              "v": {
+                "v": "Le Cirque",
+                "l": "Le Cirque"
+              }
+            },
+            {
+              "v": {
+                "v": "102 EAST MADISON ST",
+                "l": "102 EAST MADISON ST"
+              }
+            },
+            {
+              "v": {
+                "v": "Chanterelle",
+                "l": "Chanterelle"
+              }
+            },
+            {
+              "v": {
+                "v": "Quo Vadis Restaurant; 26 East 63rd Street",
+                "l": "Quo Vadis Restaurant; 26 East 63rd Street"
+              }
+            },
+            {
+              "v": {
+                "v": "Aureole",
+                "l": "Aureole"
+              }
+            },
+            {
+              "v": {
+                "v": "Chew's Cafe",
+                "l": "Chew's Cafe"
+              }
+            },
+            {
+              "v": {
+                "v": "Inagiku; 111 East 49th Street",
+                "l": "Inagiku; 111 East 49th Street"
+              }
+            },
+            {
+              "v": {
+                "v": "BOULEVARD, 66TH AND 67TH STREETS",
+                "l": "BOULEVARD, 66TH AND 67TH STREETS"
+              }
+            },
+            {
+              "v": {
+                "v": "METROPOLITAN HOTEL",
+                "l": "METROPOLITAN HOTEL"
+              }
+            },
+            {
+              "v": {
+                "v": "HOTEL LASSARE, ROSEBANK, SI,NY",
+                "l": "HOTEL LASSARE, ROSEBANK, SI,NY"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"UNKNOWN\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"UNKNOWN\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "COLUMBUS,OHIO"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "COLUMBUS, OH"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "DENVER, COLO"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "DENVER, CO"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "8 CENTRAL AVENUE, NEWARK, NJ"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEWARK, NJ"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "NEWARK",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "KRUEGER AUDITORIUM,NEWARKNJ"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEWARK, NJ"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "[a-z]",
+          "mode": "regex",
+          "caseSensitive": true,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"UNKNOWN\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"UNKNOWN\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "LAS VEGAR, HOT SPRINGS, NM"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "HOT SPRINGS, NM"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "LEXINGTON OPERA HOUSE NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "LEXINGTON, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "METROPOLITAN OPERA HOUSE ASSEMBLY ROOM; NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "MOBILE,AL"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "MOBILE, AL"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "MINNEAPOLIS,MINN;"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "MINNEAPOLIS, MN"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NEW ENGLAND"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "UNKNOWN"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NEW YOK"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NH"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "UNKNOWN"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NIAGARA FALLS,NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NIAGARA FALLS, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NY CITY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "NY SEVERAL LOCATIONS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "UNKNOWN"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "RN ROUTE"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ROYAL BLUE LINE,WALDORF"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "ROCKAWAY BEACH, NTEMPY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "ROCKAWAY BEACH, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "RR STATION"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "SANTIAGO TO CIENFUEGOS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "SPRINGFIELD, MASS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "SPRINGFIELD, MA"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "SS FRIESLAND"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "TACOMA, WA}"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "TACOMA, WA"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "TAYLOR'S HOTEL, JERSEY CITY NJ"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "JERSEY CITY, NJ"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "WAGNER PALACE CAR COON ROUTE TO STLOUIS"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "RAILROAD"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "place_cleaned",
+          "expression": "value",
+          "columnName": "place_cleaned",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "STEAMSHIP \"CITY OF PARA\"",
+                "l": "STEAMSHIP \"CITY OF PARA\""
+              }
+            },
+            {
+              "v": {
+                "v": "TADOUSAC",
+                "l": "TADOUSAC"
+              }
+            },
+            {
+              "v": {
+                "v": "PABST BLUE RIBBON",
+                "l": "PABST BLUE RIBBON"
+              }
+            },
+            {
+              "v": {
+                "v": "SS SONOMA",
+                "l": "SS SONOMA"
+              }
+            },
+            {
+              "v": {
+                "v": "STEAMER \"REPUBLIC\"",
+                "l": "STEAMER \"REPUBLIC\""
+              }
+            },
+            {
+              "v": {
+                "v": "METOPOLITAN HOTEL",
+                "l": "METOPOLITAN HOTEL"
+              }
+            },
+            {
+              "v": {
+                "v": "SS \"COPTIC\"",
+                "l": "SS \"COPTIC\""
+              }
+            },
+            {
+              "v": {
+                "v": "STEAMER PRISCILLA",
+                "l": "STEAMER PRISCILLA"
+              }
+            },
+            {
+              "v": {
+                "v": "STEAMER SARATOGA,TROY LINE",
+                "l": "STEAMER SARATOGA,TROY LINE"
+              }
+            },
+            {
+              "v": {
+                "v": "STEAMER PURITAN",
+                "l": "STEAMER PURITAN"
+              }
+            },
+            {
+              "v": {
+                "v": "SS \"FRIEDRICH DER GROSSE\"",
+                "l": "SS \"FRIEDRICH DER GROSSE\""
+              }
+            },
+            {
+              "v": {
+                "v": "RMS \" CAMPANIA\"",
+                "l": "RMS \" CAMPANIA\""
+              }
+            },
+            {
+              "v": {
+                "v": "RMS-ROTTERDAM",
+                "l": "RMS-ROTTERDAM"
+              }
+            },
+            {
+              "v": {
+                "v": "STEAMSHIP IROQUOIS",
+                "l": "STEAMSHIP IROQUOIS"
+              }
+            },
+            {
+              "v": {
+                "v": "STEAMER \"CEPHEUS\"",
+                "l": "STEAMER \"CEPHEUS\""
+              }
+            },
+            {
+              "v": {
+                "v": "WASHINGTON PARK ON THE DELAWARE",
+                "l": "WASHINGTON PARK ON THE DELAWARE"
+              }
+            },
+            {
+              "v": {
+                "v": "PAN MERICAN EXPOSITION",
+                "l": "PAN MERICAN EXPOSITION"
+              }
+            },
+            {
+              "v": {
+                "v": "STEAMER MAINE",
+                "l": "STEAMER MAINE"
+              }
+            },
+            {
+              "v": {
+                "v": "SS WESTERNLAND",
+                "l": "SS WESTERNLAND"
+              }
+            },
+            {
+              "v": {
+                "v": "PAN-AMERICAN EXPOSITION",
+                "l": "PAN-AMERICAN EXPOSITION"
+              }
+            },
+            {
+              "v": {
+                "v": "MAZZETI PHILA",
+                "l": "MAZZETI PHILA"
+              }
+            },
+            {
+              "v": {
+                "v": "STEAMER ALBERTINA",
+                "l": "STEAMER ALBERTINA"
+              }
+            },
+            {
+              "v": {
+                "v": "RMS LUCANIA",
+                "l": "RMS LUCANIA"
+              }
+            },
+            {
+              "v": {
+                "v": "SS DORIC",
+                "l": "SS DORIC"
+              }
+            },
+            {
+              "v": {
+                "v": "STEAMSHIP NORTHWEST",
+                "l": "STEAMSHIP NORTHWEST"
+              }
+            },
+            {
+              "v": {
+                "v": "RMS CAMPANIA",
+                "l": "RMS CAMPANIA"
+              }
+            },
+            {
+              "v": {
+                "v": "SIXTY-SIXTH STREET & BROADWAY",
+                "l": "SIXTY-SIXTH STREET & BROADWAY"
+              }
+            },
+            {
+              "v": {
+                "v": "SS SOUTHWORK",
+                "l": "SS SOUTHWORK"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"UNKNOWN\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"UNKNOWN\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "place_cleaned",
+          "expression": "value",
+          "columnName": "place_cleaned",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "QUEBEC, CANADA",
+                "l": "QUEBEC, CANADA"
+              }
+            },
+            {
+              "v": {
+                "v": "TORONTO,ONT,CANADA",
+                "l": "TORONTO,ONT,CANADA"
+              }
+            },
+            {
+              "v": {
+                "v": "TORONTO, CANADA",
+                "l": "TORONTO, CANADA"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "currency",
+    "expression": "value.replace(\"Dollars\",\"Canadian Dollars\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column currency using expression value.replace(\"Dollars\",\"Canadian Dollars\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "SAVARIN'S CAFE,NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "RIVERSIDE DRIVE, NY"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "NEW YORK, NY"
+      }
+    ],
+    "description": "Mass edit cells in column place_cleaned"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "place_cleaned",
+          "columnName": "place_cleaned",
+          "query": "park row",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"NEW YORK, NY\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"NEW YORK, NY\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "place_cleaned",
+          "expression": "value",
+          "columnName": "place_cleaned",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "STEAMER RHODE ISLAND",
+                "l": "STEAMER RHODE ISLAND"
+              }
+            },
+            {
+              "v": {
+                "v": "STEAMER PILGRIM",
+                "l": "STEAMER PILGRIM"
+              }
+            },
+            {
+              "v": {
+                "v": "STEAMER PLYMOUTH",
+                "l": "STEAMER PLYMOUTH"
+              }
+            },
+            {
+              "v": {
+                "v": "RMS ROTTERDAM",
+                "l": "RMS ROTTERDAM"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "text",
+          "name": "currency",
+          "columnName": "currency",
+          "query": "^Dollars$",
+          "mode": "regex",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "place_cleaned",
+    "expression": "value.replace(/.+/,\"UNKNOWN\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"UNKNOWN\")"
   }
 ]
