@@ -1,0 +1,47 @@
+select * from menu where currency = 'Dollars' and place like ('%MA%');
+
+
+select date,count(*) from menu where currency = 'Dollars' group by date;
+
+select date, currency, avg(price)
+from menu m
+inner join
+menupages mp on m.id = mp.menu_id
+inner join
+menuitems mi on mp.Id = mi.menu_page_id
+where currency = 'Dollars'
+group by date, currency
+order by currency, date;
+
+select * from menupages
+
+select max(price), min(price) from menuitems;
+
+
+
+--create cleaned data structures from old (unformatted tables)
+create table cleaned_MenuItems as select * from menuitems;
+create table cleaned_MenuPages as select * from menupages;
+create table cleaned_Dishes as select * from Dishes;
+create table cleaned_Menu as select * from Menu;
+
+
+--truncate old data from new tables
+delete from cleaned_MenuItems;
+delete from cleaned_MenuPages;
+delete from cleaned_Dishes;
+delete from cleaned_Menu;
+
+--add foreign keys (via UI)
+
+--FK menuPages.menu_id --> menu.id
+--FK menuItems --> menuPages.id
+--FK MenuItems.dish_id --> dishes.id
+
+
+delete from cleaned_MenuPages
+
+
+
+
+
