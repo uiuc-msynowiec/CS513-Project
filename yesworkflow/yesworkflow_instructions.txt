@@ -13,6 +13,11 @@ pip  install or2ywtool
 
 
 
+yesworkflow how to
+https://arshovon.com/blog/yesworkflow-docker-run/
+
+
+
 
 graphviz
 https://github.com/tmcphillips/graphviz/tree/5758e29afd98974aaf7e23eef8cea8522d225f92
@@ -21,3 +26,10 @@ https://github.com/ellson/MOTHBALLED-graphviz
 
 
 https://graphviz.org/download/
+
+
+to generate a .yw file
+or2yw -i Menu_cleaned.json -o Menu_cleaned.yw
+
+to generate a workflow png file (need graphviz installed)
+or2yw -i Menu_cleaned.json -o Menu_cleaned.png -ot png
