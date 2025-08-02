@@ -8,13 +8,7 @@ data_after = pd.read_csv("../NYPL-menus/MenuItem_cleaned.csv", usecols=["price"]
 rows_before = len(data_before)
 rows_after = len(data_after)
 rows_removed = rows_before - rows_after
-print(rows_removed / rows_before)
-
-
-threshold = data_before['price'].quantile(0.99)
-data_before_trimmed = data_before[data_before['price'] < threshold]
-data_after_trimmed = data_after[data_after['price'] < threshold]
-
+print(f"Rows removed during cleaning: {rows_removed} ({(rows_removed / rows_before):.2%})")
 
 plt.figure(figsize=(10, 5))
 sns.histplot(data_before['price'].dropna(), bins=100, color='red', label = 'Before')
