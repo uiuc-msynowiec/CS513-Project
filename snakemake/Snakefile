@@ -1,5 +1,6 @@
 rule all:
-
+	input:
+		"NYPL.db"
 
 rule menu_cleaning_1:
 	input:
