@@ -1,0 +1,23 @@
+install docker
+https://docs.docker.com/desktop/setup/install/windows-install/
+
+git clone https://github.com/yesworkflow-org/yw-docker
+
+https://github.com/yesworkflow-org
+
+
+
+https://pypi.org/project/or2ywtool/
+
+pip  install or2ywtool
+
+
+
+
+graphviz
+https://github.com/tmcphillips/graphviz/tree/5758e29afd98974aaf7e23eef8cea8522d225f92
+or
+https://github.com/ellson/MOTHBALLED-graphviz
+
+
+https://graphviz.org/download/
