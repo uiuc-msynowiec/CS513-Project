@@ -1,0 +1,547 @@
+#@begin Linear_OR #@desc Linear OpenRefine Workflow
+#@param expression:value.replace(/.+/,"COLORADO_SPRINGS,_CO")
+#@param expression:value.replace(/.*BISCAYNE.*/,"MIAMI_BAY_BISCAYNE,_FL")
+#@param expression:value.replace(/.*/,"LOUISVILLE,_KY")
+#@param expression:value.replace(/.*BOSTON.*MA.*/,"BOSTON,_MA")
+#@param expression:value.replace(/.*FRANCISCO.*CA.*/,"SAN_FRANCISCO,_CA")
+#@param expression:value.replace(/.+/,"UNKNOWN")
+#@param expression:value.replace(/.*CINCINNATI.*/,"CINCINNATI,_OH")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*AUGUSTINE.*/,"ST_AUGUSTINE,_FL")
+#@param expression:value.replace("CORONADA","CORONADO")
+#@param expression:value.replace(/.*/,"NEW_YORK,_NY")
+#@param expression:value.replace(".*PIER.*R.*I.*","NARRAGANSETT_PIER,_RI")
+#@param expression:value.replace(/.*ENROUTE.*/,"ENROUTE")
+#@param expression:value.replace(/.*ATLANTIC_CITY.*/,"ATLANTIC_CITY,_NJ")
+#@param expression:value.replace(/.*CHICAGO.*IL.*/,"CHICAGO,_IL")
+#@param expression:value.replace(/.+/,"NEW_YORK,_NY")
+#@param expression:value.replace("Dollars","Canadian_Dollars")
+#@param expression:value.replace(/.*BROOKLYN.*N(EW_)?Y.*/,"BROOKLYN,_NY")
+#@param expression:value.replace(/.*/,"ST_LOUIS,_MO")
+#@param expression:value.replace(/.*NEWPORT.*RI.*/,"NEWPORT,_RI")
+#@param expression:value.replace(/.*LONG_BEACH.*NY.*/,"LONG_ISLAND,_NY")
+#@param expression:value.replace(/[\\[\\]\\.\\?]/,"")
+#@param expression:value.replace(/.+/,"TAMPA,_FL")
+#@param expression:value.replace(/.*SARATOGA.*NY.*/,"SARATOGA_SPRINGS,_NY")
+#@param expression:value.replace(/.+/,"ATLANTA,_GA")
+#@param newColumnName:place_cleaned
+#@param expression:value.replace(/.*BOSTON,.*/,"BOSTON,_MA")
+#@param expression:value.replace(/.*DC.*/,"WASHINGTON,_DC")
+#@param expression:value.replace(/.*CLEVELAND.*OH.*/,"CLEVELAND,_OH")
+#@param expression:value.replace(/.*CORONADO_BEACH.*/,"CORONADO_BEACH,_CA")
+#@param expression:value.replace(/.*PARIS.*/,"PARIS,_FRANCE")
+#@param expression:value.replace(/.*BUFFALO.*NY.*/,"BUFFALO,_NY")
+#@param expression:value.replace(/.+/,"ALBANY,_NY")
+#@param expression:value.replace(/.*MILWAUKEE.*WI.*/,"MILWAUKEE,_WI")
+#@param expression:value.replace(/.*DETROIT.*/,"DETROIT,_MI")
+#@param expression:value.replace(/.+/,"RAILROAD")
+#@param expression:value.replace(/.+/,"JACKSONVILLE,_FL")
+#@param col-name:currency
+#@param expression:value.replace(/.*DINING_CAR.*/i,"RAILROAD")
+#@param col-name:place
+#@param expression:value.replace(/.*/,"LONG_ISLAND,_NY")
+#@param expression:value.replace(/.*EN_ROUTE.*/,"ENROUTE")
+#@param expression:value.replace(/.*MELBOURNE.*/,"MELBOURNE,_AUSTRALIA")
+#@param expression:value.replace(/.*PHILADELPHIA.*PA.*/,"PHILADELPHIA,_PA")
+#@param expression:value.replace(/.+/,"HARTFORD,_CT")
+#@param expression:value.replace(/.+/,"NEW_HAVEN,_CT")
+#@param expression:value.replace(/.*PIER.*R\\.?I.*/,"NARRAGANSETT_PIER,_RI")
+#@param expression:value.replace(/.*ORLEANS.*/,"NEW_ORLEANS,_LA")
+#@param expression:value.replace(/.*ALTOONA.*/,"ALTOONA,_PA")
+#@param expression:value.replace(/.*LONDON.*/,"LONDON,_ENGLAND")
+#@in table0
+#@out table248
+#@begin core/column-addition0#@desc Create column place_cleaned at index 6 based on column place using expression grel:value
+#@param col-name:place
+#@param newColumnName:"place_cleaned"
+#@in table0
+#@out table1
+#@end core/column-addition0
+#@begin core/text-transform0#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*/,\"NEW YORK, NY\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*/,"NEW_YORK,_NY")
+#@in table1
+#@out table2
+#@end core/text-transform0
+#@begin core/text-transform1#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*/,\"NEW YORK, NY\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*/,"NEW_YORK,_NY")
+#@in table2
+#@out table3
+#@end core/text-transform1
+#@begin core/mass-edit3#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table3
+#@out table7
+#@end core/mass-edit3
+#@begin core/text-transform2#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*CINCINNATI.*/,\"CINCINNATI, OH\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*CINCINNATI.*/,"CINCINNATI,_OH")
+#@in table7
+#@out table8
+#@end core/text-transform2
+#@begin core/text-transform3#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*LONDON.*/,\"LONDON, ENGLAND\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*LONDON.*/,"LONDON,_ENGLAND")
+#@in table8
+#@out table9
+#@end core/text-transform3
+#@begin core/text-transform4#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*PARIS.*/,\"PARIS, FRANCE\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*PARIS.*/,"PARIS,_FRANCE")
+#@in table9
+#@out table10
+#@end core/text-transform4
+#@begin core/text-transform5#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*MELBOURNE.*/,\"MELBOURNE, AUSTRALIA\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*MELBOURNE.*/,"MELBOURNE,_AUSTRALIA")
+#@in table10
+#@out table11
+#@end core/text-transform5
+#@begin core/mass-edit42#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table11
+#@out table50
+#@end core/mass-edit42
+#@begin core/text-transform6#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*/,\"LONG ISLAND, NY\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*/,"LONG_ISLAND,_NY")
+#@in table50
+#@out table51
+#@end core/text-transform6
+#@begin core/text-transform7#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*/,\"ST LOUIS, MO\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*/,"ST_LOUIS,_MO")
+#@in table51
+#@out table52
+#@end core/text-transform7
+#@begin core/text-transform8#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*/,\"LOUISVILLE, KY\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*/,"LOUISVILLE,_KY")
+#@in table52
+#@out table53
+#@end core/text-transform8
+#@begin core/mass-edit51#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table53
+#@out table62
+#@end core/mass-edit51
+#@begin core/text-transform9#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*BOSTON,.*/,\"BOSTON, MA\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*BOSTON,.*/,"BOSTON,_MA")
+#@in table62
+#@out table63
+#@end core/text-transform9
+#@begin core/mass-edit52#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table63
+#@out table64
+#@end core/mass-edit52
+#@begin core/text-transform10#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*BOSTON.*MA.*/,\"BOSTON, MA\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*BOSTON.*MA.*/,"BOSTON,_MA")
+#@in table64
+#@out table65
+#@end core/text-transform10
+#@begin core/mass-edit53#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table65
+#@out table66
+#@end core/mass-edit53
+#@begin core/text-transform11#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*PHILADELPHIA.*PA.*/,\"PHILADELPHIA, PA\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*PHILADELPHIA.*PA.*/,"PHILADELPHIA,_PA")
+#@in table66
+#@out table67
+#@end core/text-transform11
+#@begin core/mass-edit58#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table67
+#@out table72
+#@end core/mass-edit58
+#@begin core/text-transform12#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*CHICAGO.*IL.*/,\"CHICAGO, IL\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*CHICAGO.*IL.*/,"CHICAGO,_IL")
+#@in table72
+#@out table73
+#@end core/text-transform12
+#@begin core/mass-edit59#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table73
+#@out table74
+#@end core/mass-edit59
+#@begin core/text-transform13#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*ENROUTE.*/,\"ENROUTE\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*ENROUTE.*/,"ENROUTE")
+#@in table74
+#@out table75
+#@end core/text-transform13
+#@begin core/text-transform14#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*EN ROUTE.*/,\"ENROUTE\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*EN_ROUTE.*/,"ENROUTE")
+#@in table75
+#@out table76
+#@end core/text-transform14
+#@begin core/text-transform15#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*DC.*/,\"WASHINGTON, DC\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*DC.*/,"WASHINGTON,_DC")
+#@in table76
+#@out table77
+#@end core/text-transform15
+#@begin core/mass-edit65#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table77
+#@out table83
+#@end core/mass-edit65
+#@begin core/text-transform16#@desc Text transform on cells in column place using expression value.replace(/.*BISCAYNE.*/,\"MIAMI BAY BISCAYNE, FL\")
+#@param col-name:place
+#@param expression:value.replace(/.*BISCAYNE.*/,"MIAMI_BAY_BISCAYNE,_FL")
+#@in table83
+#@out table84
+#@end core/text-transform16
+#@begin core/text-transform17#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*ORLEANS.*/,\"NEW ORLEANS, LA\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*ORLEANS.*/,"NEW_ORLEANS,_LA")
+#@in table84
+#@out table85
+#@end core/text-transform17
+#@begin core/text-transform18#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*AUGUSTINE.*/,\"ST AUGUSTINE, FL\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*AUGUSTINE.*/,"ST_AUGUSTINE,_FL")
+#@in table85
+#@out table86
+#@end core/text-transform18
+#@begin core/text-transform19#@desc Text transform on cells in column place using expression value.replace(/.*MILWAUKEE.*WI.*/,\"MILWAUKEE, WI\")
+#@param col-name:place
+#@param expression:value.replace(/.*MILWAUKEE.*WI.*/,"MILWAUKEE,_WI")
+#@in table86
+#@out table87
+#@end core/text-transform19
+#@begin core/text-transform20#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*FRANCISCO.*CA.*/,\"SAN FRANCISCO, CA\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*FRANCISCO.*CA.*/,"SAN_FRANCISCO,_CA")
+#@in table87
+#@out table88
+#@end core/text-transform20
+#@begin core/text-transform21#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*BUFFALO.*NY.*/,\"BUFFALO, NY\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*BUFFALO.*NY.*/,"BUFFALO,_NY")
+#@in table88
+#@out table89
+#@end core/text-transform21
+#@begin core/mass-edit66#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table89
+#@out table90
+#@end core/mass-edit66
+#@begin core/text-transform22#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*SARATOGA.*NY.*/,\"SARATOGA SPRINGS, NY\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*SARATOGA.*NY.*/,"SARATOGA_SPRINGS,_NY")
+#@in table90
+#@out table91
+#@end core/text-transform22
+#@begin core/text-transform23#@desc Text transform on cells in column place_cleaned using expression value.replace(\".*PIER.*R.*I.*\",\"NARRAGANSETT PIER, RI\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(".*PIER.*R.*I.*","NARRAGANSETT_PIER,_RI")
+#@in table91
+#@out table92
+#@end core/text-transform23
+#@begin core/text-transform24#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*PIER.*R\\.?I.*/,\"NARRAGANSETT PIER, RI\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*PIER.*R\\.?I.*/,"NARRAGANSETT_PIER,_RI")
+#@in table92
+#@out table93
+#@end core/text-transform24
+#@begin core/text-transform25#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*CLEVELAND.*OH.*/,\"CLEVELAND, OH\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*CLEVELAND.*OH.*/,"CLEVELAND,_OH")
+#@in table93
+#@out table94
+#@end core/text-transform25
+#@begin core/text-transform26#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*BROOKLYN.*N(EW )?Y.*/,\"BROOKLYN, NY\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*BROOKLYN.*N(EW_)?Y.*/,"BROOKLYN,_NY")
+#@in table94
+#@out table95
+#@end core/text-transform26
+#@begin core/text-transform27#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*ATLANTIC CITY.*/,\"ATLANTIC CITY, NJ\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*ATLANTIC_CITY.*/,"ATLANTIC_CITY,_NJ")
+#@in table95
+#@out table96
+#@end core/text-transform27
+#@begin core/mass-edit67#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table96
+#@out table97
+#@end core/mass-edit67
+#@begin core/text-transform28#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*LONG BEACH.*NY.*/,\"LONG ISLAND, NY\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*LONG_BEACH.*NY.*/,"LONG_ISLAND,_NY")
+#@in table97
+#@out table98
+#@end core/text-transform28
+#@begin core/mass-edit70#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table98
+#@out table101
+#@end core/mass-edit70
+#@begin core/text-transform29#@desc Text transform on cells in column place_cleaned using expression value.replace(\"CORONADA\",\"CORONADO\")
+#@param col-name:place_cleaned
+#@param expression:value.replace("CORONADA","CORONADO")
+#@in table101
+#@out table102
+#@end core/text-transform29
+#@begin core/text-transform30#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*CORONADO BEACH.*/,\"CORONADO BEACH, CA\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*CORONADO_BEACH.*/,"CORONADO_BEACH,_CA")
+#@in table102
+#@out table103
+#@end core/text-transform30
+#@begin core/text-transform31#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*ALTOONA.*/,\"ALTOONA, PA\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*ALTOONA.*/,"ALTOONA,_PA")
+#@in table103
+#@out table104
+#@end core/text-transform31
+#@begin core/text-transform32#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*DETROIT.*/,\"DETROIT, MI\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*DETROIT.*/,"DETROIT,_MI")
+#@in table104
+#@out table105
+#@end core/text-transform32
+#@begin core/text-transform33#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*DINING CAR.*/i,\"RAILROAD\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*DINING_CAR.*/i,"RAILROAD")
+#@in table105
+#@out table106
+#@end core/text-transform33
+#@begin core/mass-edit71#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table106
+#@out table107
+#@end core/mass-edit71
+#@begin core/text-transform34#@desc Text transform on cells in column place_cleaned using expression value.replace(/[\\[\\]\\.\\?]/,\"\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/[\\[\\]\\.\\?]/,"")
+#@in table107
+#@out table108
+#@end core/text-transform34
+#@begin core/mass-edit74#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table108
+#@out table111
+#@end core/mass-edit74
+#@begin core/text-transform35#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*/,\"NEW YORK, NY\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*/,"NEW_YORK,_NY")
+#@in table111
+#@out table112
+#@end core/text-transform35
+#@begin core/mass-edit75#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table112
+#@out table113
+#@end core/mass-edit75
+#@begin core/text-transform36#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"TAMPA, FL\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"TAMPA,_FL")
+#@in table113
+#@out table114
+#@end core/text-transform36
+#@begin core/mass-edit76#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table114
+#@out table115
+#@end core/mass-edit76
+#@begin core/text-transform37#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"ATLANTA, GA\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"ATLANTA,_GA")
+#@in table115
+#@out table116
+#@end core/text-transform37
+#@begin core/mass-edit78#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table116
+#@out table118
+#@end core/mass-edit78
+#@begin core/text-transform38#@desc Text transform on cells in column place_cleaned using expression value.replace(/.*NEWPORT.*RI.*/,\"NEWPORT, RI\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.*NEWPORT.*RI.*/,"NEWPORT,_RI")
+#@in table118
+#@out table119
+#@end core/text-transform38
+#@begin core/text-transform39#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"JACKSONVILLE, FL\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"JACKSONVILLE,_FL")
+#@in table119
+#@out table120
+#@end core/text-transform39
+#@begin core/mass-edit79#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table120
+#@out table121
+#@end core/mass-edit79
+#@begin core/text-transform40#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"COLORADO SPRINGS, CO\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"COLORADO_SPRINGS,_CO")
+#@in table121
+#@out table122
+#@end core/text-transform40
+#@begin core/mass-edit82#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table122
+#@out table125
+#@end core/mass-edit82
+#@begin core/text-transform41#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"ALBANY, NY\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"ALBANY,_NY")
+#@in table125
+#@out table126
+#@end core/text-transform41
+#@begin core/text-transform42#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"NEW YORK, NY\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"NEW_YORK,_NY")
+#@in table126
+#@out table127
+#@end core/text-transform42
+#@begin core/text-transform43#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"HARTFORD, CT\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"HARTFORD,_CT")
+#@in table127
+#@out table128
+#@end core/text-transform43
+#@begin core/text-transform44#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"NEW HAVEN, CT\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"NEW_HAVEN,_CT")
+#@in table128
+#@out table129
+#@end core/text-transform44
+#@begin core/mass-edit85#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table129
+#@out table132
+#@end core/mass-edit85
+#@begin core/text-transform45#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"RAILROAD\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"RAILROAD")
+#@in table132
+#@out table133
+#@end core/text-transform45
+#@begin core/mass-edit97#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table133
+#@out table145
+#@end core/mass-edit97
+#@begin core/text-transform46#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"NEW YORK, NY\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"NEW_YORK,_NY")
+#@in table145
+#@out table146
+#@end core/text-transform46
+#@begin core/mass-edit110#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table146
+#@out table159
+#@end core/mass-edit110
+#@begin core/text-transform47#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"NEW YORK, NY\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"NEW_YORK,_NY")
+#@in table159
+#@out table160
+#@end core/text-transform47
+#@begin core/mass-edit114#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table160
+#@out table164
+#@end core/mass-edit114
+#@begin core/text-transform48#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"NEW YORK, NY\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"NEW_YORK,_NY")
+#@in table164
+#@out table165
+#@end core/text-transform48
+#@begin core/mass-edit117#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table165
+#@out table168
+#@end core/mass-edit117
+#@begin core/text-transform49#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"NEW YORK, NY\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"NEW_YORK,_NY")
+#@in table168
+#@out table169
+#@end core/text-transform49
+#@begin core/mass-edit119#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table169
+#@out table171
+#@end core/mass-edit119
+#@begin core/text-transform50#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"NEW YORK, NY\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"NEW_YORK,_NY")
+#@in table171
+#@out table172
+#@end core/text-transform50
+#@begin core/mass-edit120#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table172
+#@out table173
+#@end core/mass-edit120
+#@begin core/text-transform51#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"NEW YORK, NY\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"NEW_YORK,_NY")
+#@in table173
+#@out table174
+#@end core/text-transform51
+#@begin core/mass-edit161#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table174
+#@out table215
+#@end core/mass-edit161
+#@begin core/text-transform52#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"UNKNOWN\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"UNKNOWN")
+#@in table215
+#@out table216
+#@end core/text-transform52
+#@begin core/mass-edit165#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table216
+#@out table220
+#@end core/mass-edit165
+#@begin core/text-transform53#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"UNKNOWN\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"UNKNOWN")
+#@in table220
+#@out table221
+#@end core/text-transform53
+#@begin core/mass-edit186#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table221
+#@out table242
+#@end core/mass-edit186
+#@begin core/text-transform54#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"UNKNOWN\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"UNKNOWN")
+#@in table242
+#@out table243
+#@end core/text-transform54
+#@begin core/text-transform55#@desc Text transform on cells in column currency using expression value.replace(\"Dollars\",\"Canadian Dollars\")
+#@param col-name:currency
+#@param expression:value.replace("Dollars","Canadian_Dollars")
+#@in table243
+#@out table244
+#@end core/text-transform55
+#@begin core/mass-edit188#@desc Mass edit cells in column place_cleaned
+#@param col-name:place_cleaned
+#@in table244
+#@out table246
+#@end core/mass-edit188
+#@begin core/text-transform56#@desc Text transform on cells in column place_cleaned using expression value.replace(/.+/,\"NEW YORK, NY\")
+#@param col-name:place_cleaned
+#@param expression:value.replace(/.+/,"NEW_YORK,_NY")
+#@in table246
+#@out table247
+#@end core/text-transform56
+#@end Linear_OR
