@@ -236,6 +236,56 @@ and
 year is not null
 and
 currency = 'Dollars'
+
 group by
 year,
 currency;
+
+
+select max(price), min(price) from
+cleaned_menu m
+inner join
+cleaned_menupages mp on m.id = mp.menu_id
+inner join
+cleaned_menuitems mi on mp.id = mi.menu_page_id
+where  price >.05;
+
+
+
+
+select count(*), sum(price) from
+cleaned_menu m
+inner join
+cleaned_menupages mp on m.id = mp.menu_id
+inner join
+cleaned_menuitems mi on mp.id = mi.menu_page_id
+where  price = '' or price = 0;
+
+
+
+select 
+SUBSTRING(place_cleaned, INSTR(place_cleaned, ',')+1) as state_place, 
+count(*), 
+sum(price) 
+from
+cleaned_menu m
+inner join
+cleaned_menupages mp on m.id = mp.menu_id
+inner join
+cleaned_menuitems mi on mp.id = mi.menu_page_id
+where  price = '' or price = 0
+group by
+state_place;
+
+
+select 
+*
+from
+cleaned_menu m
+inner join
+cleaned_menupages mp on m.id = mp.menu_id
+inner join
+cleaned_menuitems mi on mp.id = mi.menu_page_id
+
+
+select * from dishes
