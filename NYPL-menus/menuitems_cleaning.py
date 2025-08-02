@@ -3,6 +3,8 @@ import numpy as np
 
 data = pd.read_csv('MenuItem.csv', sep=',')
 
+
+print(data.shape)
 print(data.head())
 
 
