@@ -1,10 +1,29 @@
 
 
 
---create cleaned data structures from old (unformatted tables)
+--create cleaned data structures from old (unformatted tables). Menu and menuitems were cleaned and thus need to be loaded manually
 create table cleaned_MenuPages as  select mp.* from menupages mp inner join cleaned_menu cm on cm.id = mp.menu_id; 
-create table cleaned_MenuItems as  select mi.* from menuitems mi inner join menupages mp on mi.menu_page_id = mp.id inner join cleaned_menu cm on cm.id = mp.menu_id; 
+--create table cleaned_MenuItems as  select mi.* from menuitems mi inner join menupages mp on mi.menu_page_id = mp.id inner join cleaned_menu cm on cm.id = mp.menu_id; 
 create table cleaned_Dishes as select * from Dishes;
+
+
+--MENUITEMS price column was scrubbed to bring total from 1335255 to 888707, saving these with ic violations to separate interim table for later ic violation counts
+
+--load menuitems with cleaned pricing data into interim table cleaned_menuitems_w_IC. This table still contains ic violations so we can get counts of ic violation removals
+
+--total rows after cleaning menuitems
+select count(*) from cleaned_menuitems_w_IC;
+
+
+--remove IC violations from cleaned_menuitems_w_ic and create final cleaned_menuitems table
+create table cleaned_menuitems as select mi.* from cleaned_menuItems_w_IC mi inner join cleaned_menuPages mp on mi.menu_page_id = mp.id inner join cleaned_menu m on m.id = mp.menu_id;
+
+--total count of cleaned_menuItems after removing IC violations
+select count(*) from cleaned_menuitems;
+
+--ALTERNATE CHECK of total final cleaned_menuitems
+--select count(*) from cleaned_menuitems mi inner join cleaned_menupages mp on mi.menu_page_id = mp.id inner join cleaned_menu m on mp.menu_id = m.id; 
+
 
 --add foreign keys (via UI)
 
@@ -23,13 +42,15 @@ select count(*) from menupages;
 select count(*) from menuitems;
 
 -- row counts of cleaned sets
-select count(*) from cleaned_menu;
-select count(*) from cleaned_menupages;
-select count(*) from cleaned_menuitems;
+select count(*) from cleaned_menu; --5532
+select count(*) from cleaned_menupages; --16704
+--scrubbed menuitems with ic violations
+select count(*) from cleaned_menuitems_w_IC; --888707
+select count(*) from cleaned_menuitems; --796289
 
 
 -- ic violations from original raw datasets
-select * from menupages mp left join menu m on mp.menu_id = m.id where m.id is NULL;   -- 5736 ic violations in Menupages
+select count(*) from menupages mp left join menu m on mp.menu_id = m.id where m.id is NULL;   -- 5736 ic violations in Menupages
 select count(*) from menuitems mi left join menupages mp on mi.menu_page_id = mp.id where mp.id is NULL; -- 0 ic violations in menuitems related to menupages
 select count(*) from menuitems mi left join dishes d on mi.dish_id= d.id where d.id is NULL; --244 ic violations in menuitems related to dishes
 
@@ -51,15 +72,24 @@ count (*) as original_menupages_rowcount,
 ((select count(*) from menupages) - (select count(*) from cleaned_menupages)) as num_ic_violations_removed
 from menupages;
 
+--IC violations after scrubbing menu items for pricing data to final clean version
+--cleaned_menuitems_w_ic --> cleaned_menuitems   --888707, 796289, 92418
+select 
+count (*) as cleaned_menuitems_w_ic_violations_rowcount,
+(select count(*) from cleaned_menuitems) as cleaned_menuitems_rowcount,
+((select count(*) from cleaned_menuitems_w_IC) - (select count(*) from cleaned_menuitems)) as num_ic_violations_removed
+from cleaned_menuitems_w_IC;
 
---menuitems   --1335255, 866797, 468458
+
+
+
+-- total rows removed from raw menuitems to final cleaned_menuitems
+-- menuitems --> cleaned_menuitems   --1335255, 796289, 538966
 select 
 count (*) as original_menuitems_rowcount,
 (select count(*) from cleaned_menuitems) as cleaned_menuitems_rowcount,
 ((select count(*) from menuitems) - (select count(*) from cleaned_menuitems)) as num_ic_violations_removed
 from menuitems;
-
-
 
 --rows removed from cleaning menu (not ic violations)    --17562,5532,12030
 select 
@@ -93,7 +123,7 @@ from menupages mp inner join cleaned_menu cm on cm.id = mp.menu_id;  --66937, 16
 --////CLEANING DIAGNOSTICS/////////
 
 
---rows removed due to currency being dollars and locations outside US
+--rows removed from menu due to currency being dollars and locations outside US
 select * from menu m left join cleaned_menu cm on m.id = cm.id
 where m.currency ='Dollars' and cm.id is null and m.date between '1600-01-01' and '2025-01-01';
 
@@ -102,13 +132,14 @@ where m.currency ='Dollars' and cm.id is null and m.date between '1600-01-01' an
 select * from menu m left join cleaned_menu cm on m.id = cm.id
 where m.currency ='Dollars' and cm.id is null and m.date not between '1600-01-01' and '2025-01-01';
 
+--rows removed from menuitems that had blank or $0.00 pricing
+select * from menuitems mi left join cleaned_menuitems_w_IC cmic on mi.id = cmic.id where cmic.id is null; 
+
 --ALTERNATE CHECK
 /*select count(*) as original_menu_dollar_currency_count, 
 (select count(*) from cleaned_menu where currency = 'Dollars') as cleaned_menu_dollar_currency_count,
  (count(*) - (select count(*) from cleaned_menu where currency = 'Dollars')) as difference
 from menu where currency = 'Dollars';*/
-
-select * from cleaned_menu where place_cleaned = ''
 
 
 -- changes from place --> place_cleaned
@@ -116,10 +147,11 @@ select m.id, m.place as menu_original_place, cm.place_cleaned as cleaned_menu_pl
 where m.place != cm.place_cleaned;  --1371 changed
 
 
--- QUERIES
+-- ////////////QUERIES//////////////////
 
--- 
---Average price by dollar and year
+-- CLEANED FINAL QUERIES
+
+--CLEANED Average price by dollar and year
 select 
     date_year_cleaned, 
     currency, 
@@ -131,7 +163,9 @@ from
     inner join
     cleaned_menuitems mi on mp.Id = mi.menu_page_id
 where 
-    currency = 'Dollars' 
+    currency = 'Dollars'
+    and
+    date_year_cleaned != ''
 group by 
     date_year_cleaned,
     currency
@@ -140,7 +174,7 @@ order by
     date_year_cleaned
 ;
 
---avg price by year and city,state
+--CLEANED avg price by year and city,state
 select 
     date_year_cleaned,
     place_cleaned,
@@ -153,7 +187,9 @@ from
     inner join
     cleaned_menuitems mi on mp.Id = mi.menu_page_id
 where 
-    currency = 'Dollars' 
+    currency = 'Dollars' --redundant
+    and
+    date_year_cleaned !=''
 group by 
     date_year_cleaned,
     place_cleaned,
@@ -165,9 +201,10 @@ order by
 ;
 
 
+-- CLEANED avg price by year and city,state
 select
 --    SUBSTRING(place_cleaned, 1, INSTR(place_cleaned, ',') - 1) as city,
-    case when place_cleaned = '' then 'UNKNOWN' else SUBSTRING(place_cleaned, INSTR(place_cleaned, ',')+1) end as state_place,
+    case when place_cleaned = '' then 'UNKNOWN' else SUBSTRING(place_cleaned, INSTR(place_cleaned, ',')+1) end as state_place,  --changes any blanks to 'Unknown' and only grabs state, Unknown or RAILROAD 
     date_year_cleaned,
     currency, 
     avg(price)
@@ -195,10 +232,11 @@ order by
 ;
 
 
+--ORIGINAL RAW DATASET QUERIES
 
---create  graph of totals from original and just new york
+--create  graph of totals from original and just new york (using 'like' statement)
 
---c
+--ORIGINAL/RAW Average price by dollar and year
 select 
     strftime('%Y', date) as year,
     currency, 
@@ -218,7 +256,7 @@ group by
 year,
 currency;
 
---table of average price (dollars) by year in new york (rough filtering of NY or NEW YORK) using raw tables
+--ORIGINAL/RAW table of average price (dollars) by year in new york (rough filtering of NY or NEW YORK) using raw tables
 select 
     strftime('%Y', date) as year,
     currency, 
