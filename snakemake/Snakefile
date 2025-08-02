@@ -1,0 +1,38 @@
+rule all:
+
+
+rule menu_cleaning_1:
+	input:
+		"Menu.csv"
+	output:
+		"Menu_cleaned.csv",
+		"Menu_cleaned.json"
+	script:
+		"python menu_cleaning_1.py"
+
+rule menu_cleaning_2:
+	input:
+		"Menu_cleaned.csv"
+	output:
+		"Menu_cleaned_2.csv",
+		"Menu_cleaned_2.json"
+	script:
+		"python menu_cleaning_2.py"
+
+rule menuitems_cleaning:
+	input:
+		"MenuItem.csv"
+	output:
+		"MenuItem_cleaned.csv",
+	script:
+		"python menuitems_cleaning.py"
+
+rule sql:
+	input:
+		"Menu_cleaned_2.csv",
+		"MenuItem_cleaned.csv",
+		"MenuPage.csv"
+	output:
+		"NYPL.db"
+	script:
+		"python sql.py"
