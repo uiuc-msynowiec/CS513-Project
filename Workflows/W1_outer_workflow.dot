@@ -1,0 +1,93 @@
+
+/* Start of top-level graph */
+digraph Workflow {
+rankdir=TB
+
+/* Title for graph */
+fontname=Courier; fontsize=18; labelloc=t
+label=W1_Outer_Workflow
+
+/* Start of double cluster for drawing box around nodes in workflow */
+subgraph cluster_workflow_box_outer { label=""; color=black; penwidth=2
+subgraph cluster_workflow_box_inner { label=""; color=white
+
+/* Style for nodes representing atomic programs in workflow */
+node[shape=box style=filled fillcolor="#CCFFCC" peripheries=1 fontname=Courier]
+
+/* Nodes representing atomic programs in workflow */
+CleanMenu1 [shape=record rankdir=LR label="{<f0> CleanMenu1 |<f1> Clean and generate place_cleaned and clean currency.}"];
+CleanMenu2 [shape=record rankdir=LR label="{<f0> CleanMenu2 |<f1> Generate year and clean/generate year_cleaned}"];
+RemoveNullZeroPrices [shape=record rankdir=LR label="{<f0> RemoveNullZeroPrices |<f1> Remove rows with null or 0 prices}"];
+CreateDBForSQL
+CreateDBTables
+ICViolationCheck [shape=record rankdir=LR label="{<f0> ICViolationCheck |<f1> Remove IC Violations using SQL}"];
+GetDiagnosticSummary
+GetICViolationSummary
+GetPriceVizSummary
+VisualizePriceTrend [shape=record rankdir=LR label="{<f0> VisualizePriceTrend |<f1> Plot average menu item price per year}"];
+
+/* Style for nodes representing non-parameter data channels in workflow */
+node[shape=box style="rounded,filled" fillcolor="#FFFFCC" peripheries=1 fontname=Helvetica]
+
+/* Nodes for non-parameter data channels in workflow */
+"MenuItem_cleaned.csv"
+"Menu_cleaned.csv"
+"Menu_cleaned_2.csv"
+"avg_price_by_year.png"
+"Menu.csv"
+"MenuItem.csv"
+"NYPL.db"
+Cleaned_menuitems_w_ic
+Cleaned_menupages
+Cleaned_menu
+"Cleaned_menupages(ICRemoved)"
+Cleaned_menuitems
+IcViolationSummary
+CleaningDiagnosticSummary
+PriceVisualization
+
+/* Style for nodes representing parameter channels in workflow */
+node[shape=box style="rounded,filled" fillcolor="#FCFCFC" peripheries=1 fontname=Helvetica]
+
+/* Nodes representing parameter channels in workflow */
+
+/* Edges representing connections between programs and channels */
+CleanMenu1 -> "Menu_cleaned.csv"
+"Menu.csv" -> CleanMenu1
+CleanMenu2 -> "Menu_cleaned_2.csv"
+"Menu_cleaned.csv" -> CleanMenu2
+RemoveNullZeroPrices -> "MenuItem_cleaned.csv"
+"MenuItem.csv" -> RemoveNullZeroPrices
+CreateDBForSQL -> "NYPL.db"
+"menupages.csv" -> CreateDBForSQL
+"Menu_cleaned_2.csv" -> CreateDBForSQL
+"MenuItem_cleaned.csv" -> CreateDBForSQL
+CreateDBTables -> Cleaned_menu
+CreateDBTables -> Cleaned_menuitems_w_ic
+CreateDBTables -> Cleaned_menupages
+"NYPL.db" -> CreateDBTables
+ICViolationCheck -> "Cleaned_menupages(ICRemoved)"
+ICViolationCheck -> Cleaned_menuitems
+Cleaned_menuitems_w_ic -> ICViolationCheck
+Cleaned_menupages -> ICViolationCheck
+GetDiagnosticSummary -> CleaningDiagnosticSummary
+Cleaned_menu -> GetDiagnosticSummary
+Cleaned_menuitems_w_ic -> GetDiagnosticSummary
+"Cleaned_menupages(ICRemoved)" -> GetDiagnosticSummary
+Cleaned_menuitems -> GetDiagnosticSummary
+GetICViolationSummary -> IcViolationSummary
+Cleaned_menuitems_w_ic -> GetICViolationSummary
+"Cleaned_menupages(ICRemoved)" -> GetICViolationSummary
+Cleaned_menuitems -> GetICViolationSummary
+GetPriceVizSummary -> PriceVisualization
+IcViolationSummary -> GetPriceVizSummary
+CleaningDiagnosticSummary -> GetPriceVizSummary
+VisualizePriceTrend -> "avg_price_by_year.png"
+VisualizePriceTrend -> "avg_price_by_year_and_state.png"
+PriceVisualization -> VisualizePriceTrend
+
+/* End of double cluster for drawing box around nodes in workflow */
+}}
+
+/* End of top-level graph */
+}
