@@ -4,10 +4,10 @@
 -- Purpose      Sql Queries to create cleaned tables, run diagnostics/row counts, and create final graphs
 
 
+
 --create cleaned data structures from old (unformatted tables). Menu and menuitems were cleaned and thus need to be loaded manually
 create table cleaned_MenuPages as  select mp.* from menupages mp inner join cleaned_menu cm on cm.id = mp.menu_id; 
 
-create table cleaned_Dishes as select * from Dishes;
 
 
 --MENUITEMS price column was scrubbed to bring total from 1335255 to 888707, saving these with ic violations to separate interim table for later ic violation counts
